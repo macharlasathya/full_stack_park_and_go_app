@@ -25,7 +25,7 @@ function App() {
      <AccordionComponent title="Frequently Asked Questions!" />
      <Footer />
 
-     <LoginForm/>
+     {/* <LoginForm/> */}
      
     
     </>
