@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons CSS
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
 import "../../Component/LandingCss/FAQ.css";
 
 const AccordionComponent = ({ title }) => {
