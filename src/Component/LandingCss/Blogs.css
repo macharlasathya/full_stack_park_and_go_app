@@ -1,0 +1,224 @@
+/* 
+.card-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
+  
+ 
+  .card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    top: 0;
+  }
+  
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:not(:hover) {
+    animation: dropDown 0.3s ease-out;
+  }
+  
+  @keyframes dropDown {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+ 
+  .card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .no-image {
+    width: 100%;
+    height: 180px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 14px;
+  }
+  
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .card-text {
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .card-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .card-button:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .card-grid-container {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-grid-container {
+      grid-template-columns: 1fr; 
+    }
+  }
+   */
+
+
+/* Base Grid Layout - Always 3 Cards per Row */
+.card-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styles */
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  top: 0;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 100%;
+  height: 180px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+}
+
+/* Card Content */
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-text {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Small screens: 1 card per row (≤ 575.98px) */
+@media (max-width: 575.98px) {
+  .card-grid-container {
+    grid-template-columns: 1fr; /* 1 card per row */
+    max-width: 100%;
+  }
+}
+
+/* Large mobile screens: 2 cards per row (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    max-width: 90%;
+  }
+}
+
+/* Tablets & Small Laptops: 3 cards per row (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 cards per row */
+    max-width: 95%;
+  }
+}
+
+/* Laptops & Desktops: Keep 3 cards per row (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 cards per row */
+    max-width: 100%;
+  }
+}
+
+/* Large screens & Monitors: Keep 3 cards per row (≥ 1200px) */
+@media (min-width: 1200px) {
+  .card-grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 cards per row */
+    max-width: 1200px;
+  }
+}
+
+
+
+
+    

@@ -1,0 +1,169 @@
+/* Container Styles */
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    background-color: #f3f4f6; /* bg-gray-100 */
+    box-sizing: border-box;
+}
+
+/* Title Styles */
+.accordion-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1f2937; /* text-gray-800 */
+    text-align: center;
+}
+
+/* Accordion Wrapper */
+.accordion-wrapper {
+    width: 100%;
+    max-width: 600px; /* Centered content with space on both sides */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Accordion Item */
+.accordion-item {
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+/* Accordion Header */
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 1.5rem;
+    color: #3b82f6; /* text-blue-500 */
+    transition: transform 0.3s;
+}
+
+/* Accordion Content */
+.accordion-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease;
+    padding: 0 1rem;
+    color: #4b5563; /* text-gray-600 */
+    background-color: #f9fafb;
+    width: 100%;
+}
+
+/* Active Accordion Body */
+.accordion-body.active {
+    max-height: 160px; /* max-h-40 */
+    padding: 1rem;
+}
+
+/* Content Paragraph */
+.accordion-body p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Small screens (≤ 575.98px) */
+@media (max-width: 575.98px) {
+    .accordion-title {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .accordion-wrapper {
+        max-width: 100%; /* Full width */
+        padding: 0 10px;
+    }
+
+    .accordion-header {
+        font-size: 1rem; /* Reduce header size */
+        padding: 0.75rem;
+    }
+
+    .accordion-body p {
+        font-size: 0.875rem; /* Reduce text size */
+    }
+}
+
+/* Large mobile screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .accordion-title {
+        font-size: 1.75rem;
+    }
+
+    .accordion-wrapper {
+        max-width: 90%;
+    }
+
+    .accordion-header {
+        font-size: 1.125rem;
+        padding: 0.9rem;
+    }
+}
+
+/* Tablets & Small Laptops (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .accordion-title {
+        font-size: 2rem;
+    }
+
+    .accordion-wrapper {
+        max-width: 80%;
+    }
+}
+
+/* Laptops & Desktops (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .accordion-title {
+        font-size: 2.2rem;
+    }
+
+    .accordion-wrapper {
+        max-width: 70%;
+    }
+}
+
+/* Large screens & Monitors (≥ 1200px) */
+@media (min-width: 1200px) {
+    .accordion-title {
+        font-size: 2.5rem;
+    }
+
+    .accordion-wrapper {
+        max-width: 60%;
+    }
+}
+
+
+
+

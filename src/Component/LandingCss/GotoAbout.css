@@ -1,0 +1,74 @@
+/* Prevent horizontal scrolling */
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling */
+.company-container {
+  padding: 40px 15px;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center; /* Center content on smaller screens */
+}
+
+/* Image styling - Maintain default height */
+.company-image {
+  width: 100%; /* Full width */
+  max-width: 550px; /* Maintain original size */
+  height: auto; /* Ensure aspect ratio is preserved */
+  max-height: 400px; /* Set a max height to prevent shrinking */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto; /* Center image */
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Small screens: Adjust layout for better readability (≤ 575.98px) */
+@media (max-width: 575.98px) {
+  .company-image {
+    width: 90%; /* Scale down width */
+    max-width: 400px;
+    max-height: 350px; /* Reduce height proportionally */
+  }
+}
+
+/* Large mobile screens (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .company-image {
+    width: 85%;
+    max-width: 500px;
+    max-height: 380px; /* Adjust height accordingly */
+  }
+}
+
+/* Tablets & Small Laptops (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .company-image {
+    width: 80%;
+    max-width: 550px;
+    max-height: 400px; /* Keep height stable */
+  }
+}
+
+/* Laptops & Desktops (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .company-image {
+    width: 75%;
+    max-width: 550px;
+    max-height: 400px; /* Maintain height */
+  }
+}
+
+/* Large screens & Monitors (≥ 1200px) */
+@media (min-width: 1200px) {
+  .company-image {
+    width: 70%;
+    max-width: 600px;
+    max-height: 450px; /* Slightly increase height */
+  }
+}
+
+

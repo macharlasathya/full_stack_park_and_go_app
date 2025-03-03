@@ -1,0 +1,210 @@
+/* 
+.unique-containers {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto; 
+}
+
+
+.unique-card-container {
+    display: flex;
+    gap: 40px; 
+    justify-content: space-between; 
+    flex-wrap: nowrap; 
+    max-width: 90%; 
+}
+
+
+.custom-unique-card {
+    border: 2px dashed lightseagreen;
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.custom-unique-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.unique-card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.unique-bold-text {
+    font-weight: bold;
+    color: black;
+}
+
+
+.unique-card-text {
+    color: #444;
+    font-size: 16px;
+}
+
+
+.unique-highlight {
+    border: 3px solid #ff9800 !important;
+    box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.6);
+}
+
+.unique-text-primary { color: #007bff; }
+.unique-text-secondary { color: #6c757d; }
+.unique-text-success { color: #28a745; }
+.unique-text-danger { color: #dc3545; } */
+
+
+
+/* Container for the entire card section */
+.unique-containers {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Card Container with responsive grid layout */
+.unique-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Individual card styling */
+.custom-unique-card {
+    border: 2px dashed lightseagreen;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px;
+    flex: 1 1 250px; /* Responsive flex basis */
+}
+
+/* Card hover effect */
+.custom-unique-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card title styling */
+.unique-card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Bold text styling */
+.unique-bold-text {
+    font-weight: bold;
+    color: black;
+}
+
+/* Card text styling */
+.unique-card-text {
+    color: #444;
+    font-size: 16px;
+}
+
+/* Highlighted card styling */
+.unique-highlight {
+    border: 3px solid #ff9800 !important;
+    box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.6);
+}
+
+/* Text color classes */
+.unique-text-primary { color: #007bff; }
+.unique-text-secondary { color: #6c757d; }
+.unique-text-success { color: #28a745; }
+.unique-text-danger { color: #dc3545; }
+
+/* ============================= */
+/* Media Queries for Responsiveness */
+/* ============================= */
+
+/* Small devices (landscape phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .unique-card-container {
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .custom-unique-card {
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 15px;
+    }
+}
+
+/* Medium devices (tablets, less than 768px) */
+@media (max-width: 767.98px) {
+    .unique-card-container {
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .custom-unique-card {
+        max-width: 100%;
+        flex: 1 1 45%;
+    }
+}
+
+/* Large devices (desktops, less than 992px) */
+@media (max-width: 991.98px) {
+    .unique-card-container {
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .custom-unique-card {
+        max-width: 100%;
+        flex: 1 1 30%;
+    }
+}
+
+/* Extra large devices (large desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .unique-card-container {
+        gap: 25px;
+        padding: 0 25px;
+    }
+    .custom-unique-card {
+        max-width: 100%;
+        flex: 1 1 25%;
+    }
+}
+
+/* Extra extra large devices (larger desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .unique-card-container {
+        gap: 30px;
+        padding: 0 30px;
+    }
+    .custom-unique-card {
+        max-width: 250px;
+        flex: 1 1 250px;
+    }
+}
+
+
+
+  
