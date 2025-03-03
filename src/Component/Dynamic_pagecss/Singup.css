@@ -1,6 +1,6 @@
-/* Center the form vertically */
+
 body {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa; 
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -8,7 +8,6 @@ body {
     margin: 0;
 }
 
-/* Card styling */
 .card {
     border: none;
     border-radius: 12px;
@@ -17,7 +16,6 @@ body {
     padding: 2rem;
 }
 
-/* Form input and button styling */
 .form-control,
 .btn-primary {
     border-radius: 8px;
@@ -41,7 +39,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 91, 187, 0.2);
 }
 
-/* Text link styles */
+
 a.text-decoration-none {
     color: #007bff;
     transition: color 0.3s;
@@ -51,33 +49,32 @@ a.text-decoration-none:hover {
     color: #0056b3;
 }
 
-/* Checkbox styling */
+
 .form-check-input:checked {
     background-color: #007bff;
     border-color: #007bff;
 }
 
-/* Form titles */
 h2 {
     font-weight: 600;
     color: #333;
     margin-bottom: 1.5rem;
 }
 
-/* Shadow and hover effects */
+
 .card:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
     transition: all 0.3s;
 }
 
-/* Input focus state */
+
 .form-control:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* Media Queries for Mobile */
+
 @media (max-width: 576px) {
     .card {
         padding: 1.5rem;

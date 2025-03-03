@@ -9,7 +9,7 @@ const LoginForm = () => {
         const formData = new FormData(e.target);
         const values = Object.fromEntries(formData.entries());
         console.log('Login Successful:', values);
-        // Add your login logic here (e.g., API call)
+        
     };
 
     return (
@@ -18,7 +18,7 @@ const LoginForm = () => {
                 <h2 className="text-center mb-4">Login</h2>
 
                 <form onSubmit={onFinish}>
-                    {/* Username Field */}
+                    
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>
                         <div className="input-group">
@@ -36,7 +36,6 @@ const LoginForm = () => {
                         </div>
                     </div>
 
-                    {/* Password Field */}
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Password</label>
                         <div className="input-group">
@@ -54,7 +53,7 @@ const LoginForm = () => {
                         </div>
                     </div>
 
-                    {/* Remember Me and Forgot Password */}
+                
                     <div className="d-flex justify-content-between align-items-center mb-3">
                         <div className="form-check">
                             <input
@@ -72,7 +71,7 @@ const LoginForm = () => {
                         </a>
                     </div>
 
-                    {/* Submit Button */}
+                    
                     <button type="submit" className="btn btn-primary w-100">
                         Log In
                     </button>

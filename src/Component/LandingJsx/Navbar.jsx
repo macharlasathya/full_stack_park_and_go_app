@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top shadow-lg">
       <div className="container-fluid">
-        {/* Logo & Title */}
+     
         <a className="navbar-brand d-flex align-items-center" href="#">
           <img src={AppLog} alt="Logo" className="navbar-logo" />
           <span className="navbar-title">
@@ -18,7 +18,7 @@ const Navbar = () => {
           </span>
         </a>
 
-        {/* Hamburger Menu Button */}
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -30,7 +30,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible Navbar Menu */}
+       
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Right Section */}
+         
           <div className="navbar-right d-flex align-items-center">
             <span className="navbar-phone">+91 9392499936</span>
             <button className="btn btn-primary navbar-login">Login</button>

@@ -1,4 +1,4 @@
-// Footer.jsx
+
 import React from 'react';
 import "../../Component/LandingCss/Last.css";
 

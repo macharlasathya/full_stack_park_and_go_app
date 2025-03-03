@@ -1,4 +1,4 @@
-/* General Navbar Styling */
+
 .navbar {
     background-color: #252a34;
     padding: 12px 20px;
@@ -7,7 +7,7 @@
     z-index: 1000;
 }
 
-/* Logo */
+
 .navbar-logo {
     width: 60px;
     height: 60px;
@@ -20,7 +20,7 @@
     transform: scale(1.08);
 }
 
-/* Navbar Title */
+
 .navbar-title {
     font-size: 16px;
     font-weight: 600;
@@ -28,7 +28,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Navbar Links */
+
 .navbar-nav {
     display: flex;
     gap: 20px;
@@ -48,7 +48,7 @@
     color: #ff5733 !important;
 }
 
-/* Right Section */
+
 .navbar-right {
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@
     font-weight: 600;
 }
 
-/* Login Button */
+
 .navbar-login {
     font-size: 14px;
     font-weight: 600;
@@ -77,22 +77,20 @@
     background-color: #c0392b;
 }
 
-/* Hamburger Menu */
 .navbar-toggler {
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
-    display: block; /* Ensure it's visible */
+    display: block; 
     color: white;
 }
 
-/* Fix Bootstrap's default icon color */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Responsive Styles */
+
 @media (max-width: 991px) {
     .navbar {
         flex-direction: column;

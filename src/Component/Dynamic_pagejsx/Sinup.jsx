@@ -21,7 +21,7 @@ const SingupForm = ({ isSignup }) => {
                 </h2>
                 
                 <form onSubmit={handleSubmit}>
-                    {/* Username Field */}
+                   
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>
                         <div className="input-group">
@@ -39,7 +39,6 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     </div>
 
-                    {/* Email Field (Signup only) */}
                     {formType === 'signup' && (
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email address</label>
@@ -59,7 +58,7 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     )}
 
-                    {/* Password Field */}
+                    {
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Password</label>
                         <div className="input-group">
@@ -77,7 +76,7 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     </div>
 
-                    {/* Remember Me (Login only) */}
+                   
                     {formType === 'login' && (
                         <div className="d-flex justify-content-between align-items-center mb-3">
                             <div className="form-check">
@@ -112,7 +111,7 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     )}
 
-                    {/* Submit Button */}
+                    
                     <button type="submit" className="btn btn-primary w-100">
                         {formType === 'signup' ? 'Sign Up' : 'Login'}
                     </button>
