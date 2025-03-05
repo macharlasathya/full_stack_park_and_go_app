@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Dynamic_pagecss/Signup.css'
+import '../LandingCss/SignupForm.css';
+import { useNavigate } from 'react-router-dom';
 
-const SingupForm = ({ isSignup }) => {
-    const [formType, setFormType] = useState(isSignup ? 'signup' : 'login');
+const SignupForm = () => {
+    const [formType, setFormType] = useState('signup'); // Default to 'signup'
+    const navigate = useNavigate(); // Initialize navigation hook
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const values = Object.fromEntries(formData.entries());
+        
         console.log(`${formType === 'signup' ? 'Signup' : 'Login'} Successful:`, values);
         
+        // Simulate a successful signup/login (in a real app, you'd check credentials via API)
+        setTimeout(() => {
+            navigate('/homepage'); // Navigate to homepage after form submission
+        }, 1000);
     };
 
     return (
@@ -21,7 +28,6 @@ const SingupForm = ({ isSignup }) => {
                 </h2>
                 
                 <form onSubmit={handleSubmit}>
-                   
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>
                         <div className="input-group">
@@ -39,7 +45,6 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     </div>
 
-                  
                     {formType === 'signup' && (
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email address</label>
@@ -59,7 +64,6 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     )}
 
-                    
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Password</label>
                         <div className="input-group">
@@ -77,7 +81,6 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     </div>
 
-                   
                     {formType === 'login' && (
                         <div className="d-flex justify-content-between align-items-center mb-3">
                             <div className="form-check">
@@ -112,7 +115,6 @@ const SingupForm = ({ isSignup }) => {
                         </div>
                     )}
 
-                    
                     <button type="submit" className="btn btn-primary w-100">
                         {formType === 'signup' ? 'Sign Up' : 'Login'}
                     </button>
@@ -137,7 +139,7 @@ const SingupForm = ({ isSignup }) => {
                                     onClick={() => setFormType('signup')}
                                     className="text-decoration-none"
                                 >
-                                    Sign Up
+                                    Sign up
                                 </a>
                             </>
                         )}
@@ -148,6 +150,6 @@ const SingupForm = ({ isSignup }) => {
     );
 };
 
-export default SingupForm;
+export default SignupForm;
 
 

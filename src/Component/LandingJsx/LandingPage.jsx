@@ -1,24 +1,29 @@
-import React from 'react';
-import '../LandingCss/LandingPage.css';
-import landingImage from '../../assets/homeLogo.jpg';
+
+import SaftyCards from "../LandingJsx/UniquesaftyCards";
+import CompanyOverview from "../LandingJsx/GotoAbout"
+import FeatureCards from '../LandingJsx/Features'
+import "bootstrap-icons/font/bootstrap-icons.css";
+import CardGrid from '../LandingJsx/Blogs';
+import AccordionComponent from '../LandingJsx/FAQ'
+import Footer from '../LandingJsx/Last'
+import "../LandingCss/homeLogo.css";
+import EnterApp from '../LandingJsx/EnterApp'
+import  Navbar from '../LandingJsx/Navbar'
 
 
-const LandingPage = () => {
-    return (
-        <div className="image-container">
-            <img 
-                src={landingImage} 
-                alt="Landing" 
-                className="background-image" 
-            />
-            <button 
-                className="enter-button" 
-                onClick={() => window.location.href = '/main-page'}
-            >
-                Enter the App
-            </button>
-        </div>
-    );
-};
+function LandingPage() {
+  return (
+    <>
+      < Navbar />
+      <EnterApp/>
+      <SaftyCards />
+      <CompanyOverview />
+      <FeatureCards />
+     <CardGrid />
+     <AccordionComponent title="Frequently Asked Questions!" />
+     <Footer />
+    </>
+  );
+}
 
 export default LandingPage;

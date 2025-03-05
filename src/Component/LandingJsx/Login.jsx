@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Dynamic_pagecss/Login.css'
+import '../LandingCss/Login.css'
 
 const LoginForm = () => {
 
