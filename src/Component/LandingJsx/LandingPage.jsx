@@ -1,10 +1,10 @@
 
-import SaftyCards from "../LandingJsx/UniquesaftyCards";
+import UniquesaftyCards from "../LandingJsx/UniquesaftyCards";
 import CompanyOverview from "../LandingJsx/GotoAbout"
-import FeatureCards from '../LandingJsx/Features'
-import "bootstrap-icons/font/bootstrap-icons.css";
-import CardGrid from '../LandingJsx/Blogs';
-import AccordionComponent from '../LandingJsx/FAQ'
+import Feature  from '../LandingJsx/Features'
+
+import Blogs from '../LandingJsx/Blogs';
+import FAQ from '../LandingJsx/FAQ'
 import Footer from '../LandingJsx/Last'
 import "../LandingCss/homeLogo.css";
 import EnterApp from '../LandingJsx/EnterApp'
@@ -16,11 +16,11 @@ function LandingPage() {
     <>
       < Navbar />
       <EnterApp/>
-      <SaftyCards />
+      <UniquesaftyCards />
       <CompanyOverview />
-      <FeatureCards />
-     <CardGrid />
-     <AccordionComponent title="Frequently Asked Questions!" />
+      <Feature  />
+     <Blogs/>
+     <FAQ title="Frequently Asked Questions!" />
      <Footer />
     </>
   );

@@ -1,8 +1,10 @@
 
+
+
 import React, { useState } from "react";
 import '../../Component/LandingCss/UniqueSaftyCards.css';
 
-const SaftyCards = () => {
+const UniquesaftyCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
 
   const handleCardClick = (index) => {
@@ -18,13 +20,11 @@ const SaftyCards = () => {
 
   return (
     <div className="unique-containers">
-      <div className="row unique-card-container">
+      <div className="unique-card-container">
         {cardData.map((card, index) => (
           <div
             key={index}
-            className={`col-12 col-sm-6 col-md-4 col-lg-3 mb-3 custom-unique-card ${
-              selectedCard === index ? "unique-highlight" : ""
-            }`}
+            className={`custom-unique-card ${selectedCard === index ? "unique-highlight" : ""}`}
             onClick={() => handleCardClick(index)}
           >
             <div className={`unique-card-body ${card.class}`}>
@@ -38,4 +38,4 @@ const SaftyCards = () => {
   );
 };
 
-export default SaftyCards;
+export default UniquesaftyCards;

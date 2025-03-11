@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AppLog from "../../assets/AppLog.png";
 import "../../Component/LandingCss/Navbar.css";
 
@@ -10,15 +8,13 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top shadow-lg">
       <div className="container-fluid">
-     
+        {/* Logo and Title */}
         <a className="navbar-brand d-flex align-items-center" href="#">
           <img src={AppLog} alt="Logo" className="navbar-logo" />
-          <span className="navbar-title">
-            ParkNGo – Find, book, and park effortlessly
-          </span>
+          <span className="navbar-title">ParkNGo – Find, book, and park effortlessly</span>
         </a>
 
-        
+        {/* Mobile Menu Button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -30,7 +26,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-       
+        {/* Navigation Links */}
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
@@ -50,7 +46,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-         
+          {/* Right Side (Phone Number & Login Button) */}
           <div className="navbar-right d-flex align-items-center">
             <span className="navbar-phone">+91 9392499936</span>
             <button className="btn btn-primary navbar-login">Login</button>
@@ -62,6 +58,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
 
 
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css'; 
+
 import "../../Component/LandingCss/FAQ.css";
 
-const AccordionComponent = ({ title }) => {
+const FAQ = ({ title }) => {
     const [activeIndex, setActiveIndex] = useState(null);
 
-    const accordionData = [
+    const FAQ = [
         { title: 'What is ParkSpot?', content: 'ParkSpot is a convenient app to find and book parking spaces.' },
         { title: 'Why do I need to add my vehicle number at the time of booking? Is it safe?', content: 'Providing your vehicle number helps ensure the correct parking space is allocated to you. Your data is kept secure.' },
         { title: 'How can your platform help me? How safe is your platform?', content: 'Our platform offers secure and verified parking spaces, ensuring both convenience and safety.' },
@@ -43,7 +43,7 @@ const AccordionComponent = ({ title }) => {
     );
 };
 
-export default AccordionComponent;
+export default FAQ;
 
 
 

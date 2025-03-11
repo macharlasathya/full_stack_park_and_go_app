@@ -1,0 +1,154 @@
+.parking-card {
+  width: 100%;
+  max-width: 650px; /* Keeps card width balanced */
+  padding: 15px; /* Further reduced padding for lower height */
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+/* Title Styling */
+.title-text {
+  font-size: 1.8rem; /* Slightly reduced font size */
+  color: black;
+}
+
+/* Feature Buttons */
+.feature-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem; /* Slightly reduced font size */
+  padding: 10px; /* Further reduced padding */
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-btn i {
+  font-size: 1.3rem; /* Slightly reduced icon size */
+}
+
+.feature-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Search Input with Icon */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 6px; /* Further reduced padding */
+  position: relative;
+  max-width: 450px; /* Restricts width */
+  margin: 0 auto; /* Centers the search bar */
+  width: 100%;
+}
+
+.search-input {
+  flex-grow: 1;
+  font-size: 1rem; /* Slightly reduced font size */
+  border: none;
+  outline: none;
+  padding-right: 35px; /* Slightly reduced padding */
+}
+
+.search-icon {
+  font-size: 1.4rem; /* Slightly reduced icon size */
+  color: #007bff;
+  position: absolute;
+  right: 12px;
+}
+
+/* Search Button - Now Only as Wide as the Text */
+.search-btn {
+  font-size: 1.1rem; /* Slightly reduced font size */
+  padding: 6px 12px; /* Further reduced padding */
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 10px auto 0; /* Slightly reduced margin */
+  width: auto;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .parking-card {
+    max-width: 90%;
+    padding: 12px;
+  }
+
+  .feature-btn {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  .title-text {
+    font-size: 1.5rem;
+  }
+
+  .search-container {
+    max-width: 400px;
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+    padding: 6px;
+  }
+
+  .search-icon {
+    font-size: 1.2rem;
+  }
+
+  .search-btn {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parking-card {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .feature-btn {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .title-text {
+    font-size: 1.3rem;
+  }
+
+  .search-container {
+    flex-direction: row;
+    border-radius: 6px;
+    max-width: 100%;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .search-icon {
+    font-size: 1.1rem;
+  }
+
+  .search-btn {
+    padding: 5px 10px;
+    font-size: 0.95rem;
+    width: auto;
+  }
+}
+
+
+  

@@ -20,7 +20,7 @@ const cardsData = [
   }
 ];
 
-const FeatureCards = () => {
+const Feature = () => {
   return (
     <div  id="featuressection" className="container">
       <div className="row">
@@ -40,5 +40,5 @@ const FeatureCards = () => {
   );
 };
 
-export default FeatureCards;
+export default Feature;
 

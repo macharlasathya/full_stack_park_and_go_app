@@ -1,0 +1,103 @@
+/* Background for the entire page */
+body {
+  background-color: #f4f7fc; /* Light blue-gray background */
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container for the form */
+.form-container {
+  width: 100%;
+  max-width: 450px; /* Keeps it centered and readable */
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  margin-top: 30px; /* Reduced margin to move form slightly lower */
+}
+
+/* Form Heading */
+h2 {
+  color: #007bff;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Styling form inputs */
+.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Error Message Styling */
+.invalid-feedback {
+  font-size: 14px;
+  color: red;
+  margin-top: 5px;
+}
+
+/* Submit Button Styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 90%;
+    padding: 20px;
+    margin-top: 20px; /* Further reduced margin for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .form-container {
+    max-width: 90%;
+    padding: 20px;
+    margin-top: 15px; /* Adjusted margin for very small screens */
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+

@@ -11,7 +11,7 @@ import blog7 from '/src/assets/blog7.jpg';
 import blog8 from '/src/assets/blog8.jpg';
 import blog9 from '/src/assets/blog9.jpg';
 
-const CardGrid = () => {
+const Blogs = () => {
   const cards = [
     { title: 'Eliminating Traffic Jams in India! by Nikhil Surya Mukhi', text: 'Some quick example text for card 1.', link: '#', image: blog1 },
     { title: 'Parking Challenges in Office Area! by Sujeet Kumar', text: 'Some quick example text for card 2.', link: '#', image: blog2 },
@@ -48,6 +48,6 @@ const CardGrid = () => {
   );
 };
 
-export default CardGrid;
+export default Blogs;
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import '../LandingCss/SignupForm.css';
 import { useNavigate } from 'react-router-dom';
 

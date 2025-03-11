@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbars.css"; // Importing external CSS file
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import logo from "../../assets/AppLog.png"; // Import your logo here
 
 const Navbars = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +12,8 @@ const Navbars = () => {
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
         {/* Logo / Brand */}
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand d-flex align-items-center" href="/">
+          <img src={logo} alt="Logo" className="navbar-logo" /> {/* Added logo */}
           ParkNGo – Find, Book, and Park Effortlessly
         </a>
 
@@ -27,17 +32,17 @@ const Navbars = () => {
                 Company
               </button>
               <ul className={`dropdown-menu ${isOpen ? "show" : ""}`}>
-                <li><a className="dropdown-item" href="/about">About</a></li>
-                <li><a className="dropdown-item" href="/features">Features</a></li>
-                <li><a className="dropdown-item" href="/blogs">Blogs</a></li>
-                <li><a className="dropdown-item" href="/faq">FAQ</a></li>
+                <Link className="dropdown-item" to="/About">About</Link>
+                <Link className="dropdown-item" to="/features">Features</Link>
+                <Link className="dropdown-item" to="/blogs">Blogs</Link>
+                <Link className="dropdown-item" to="/faq">FAQ</Link>
               </ul>
             </li>
-            {/* Register Spot - Now Styled Like Home & Company */}
+            {/* Register Spot */}
             <li className="nav-item">
-              <a className="register-spot-link" href="/register">
+              <Link className="register-spot-link" to="/Submitform">
                 Register Spot
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -52,6 +57,7 @@ const Navbars = () => {
 };
 
 export default Navbars;
+
 
 
 
