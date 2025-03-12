@@ -62,10 +62,11 @@ function App() {
           <Route path="/Features" element={<Feature />} />
           <Route path="/Blogs" element={<Blogs />} />
           <Route path="/FQA" element={<FAQ />} />
+          <Route path="/" element={ <ParkingSearchCard />}/>
         </Routes>
       </div>
-      <ParkingSearchCard />
-      <Footer />
+     
+      {/* <Footer /> */}
     </div>
   );
 }

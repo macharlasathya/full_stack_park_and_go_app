@@ -1,14 +1,43 @@
+/* Background Container */
+.background-container {
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Full viewport height */
+  background-image: url("../../assets/homeLogo.jpg");
+  background-size: cover; /* Ensures the image covers the area */
+  background-position: center top; /* Ensures image touches the top */
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay to contain the card */
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Content Container */
+.content-container {
+  padding-top: 20px;
+  width: 100%;
+}
+
+/* Parking Card Styling */
 .parking-card {
   width: 100%;
-  max-width: 650px; /* Keeps card width balanced */
-  padding: 15px; /* Further reduced padding for lower height */
+  max-width: 650px;
+  padding: 20px;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Title Styling */
 .title-text {
-  font-size: 1.8rem; /* Slightly reduced font size */
+  font-size: 1.8rem;
   color: black;
 }
 
@@ -18,14 +47,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem; /* Slightly reduced font size */
-  padding: 10px; /* Further reduced padding */
+  font-size: 1.1rem;
+  padding: 10px;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
 
 .feature-btn i {
-  font-size: 1.3rem; /* Slightly reduced icon size */
+  font-size: 1.3rem;
 }
 
 .feature-btn:hover {
@@ -39,116 +68,42 @@
   align-items: center;
   border: 2px solid #007bff;
   border-radius: 10px;
-  padding: 6px; /* Further reduced padding */
+  padding: 8px;
   position: relative;
-  max-width: 450px; /* Restricts width */
-  margin: 0 auto; /* Centers the search bar */
+  max-width: 450px;
+  margin: 0 auto;
   width: 100%;
 }
 
 .search-input {
   flex-grow: 1;
-  font-size: 1rem; /* Slightly reduced font size */
+  font-size: 1rem;
   border: none;
   outline: none;
-  padding-right: 35px; /* Slightly reduced padding */
+  padding-right: 35px;
 }
 
 .search-icon {
-  font-size: 1.4rem; /* Slightly reduced icon size */
+  font-size: 1.4rem;
   color: #007bff;
   position: absolute;
   right: 12px;
 }
 
-/* Search Button - Now Only as Wide as the Text */
-.search-btn {
-  font-size: 1.1rem; /* Slightly reduced font size */
-  padding: 6px 12px; /* Further reduced padding */
+/* Main Search Button */
+.full-search-btn {
+  font-size: 1.1rem;
+  padding: 10px 20px;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
-  display: block;
-  margin: 10px auto 0; /* Slightly reduced margin */
-  width: auto;
-  white-space: nowrap;
 }
 
-.search-btn:hover {
+.full-search-btn:hover {
   transform: scale(1.05);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .parking-card {
-    max-width: 90%;
-    padding: 12px;
-  }
-
-  .feature-btn {
-    font-size: 0.95rem;
-    padding: 8px;
-  }
-
-  .title-text {
-    font-size: 1.5rem;
-  }
-
-  .search-container {
-    max-width: 400px;
-  }
-
-  .search-input {
-    font-size: 0.95rem;
-    padding: 6px;
-  }
-
-  .search-icon {
-    font-size: 1.2rem;
-  }
-
-  .search-btn {
-    font-size: 1rem;
-    padding: 5px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .parking-card {
-    max-width: 95%;
-    padding: 10px;
-  }
-
-  .feature-btn {
-    font-size: 0.85rem;
-    padding: 6px;
-  }
-
-  .title-text {
-    font-size: 1.3rem;
-  }
-
-  .search-container {
-    flex-direction: row;
-    border-radius: 6px;
-    max-width: 100%;
-  }
-
-  .search-input {
-    font-size: 0.9rem;
-    padding: 5px;
-    width: 100%;
-  }
-
-  .search-icon {
-    font-size: 1.1rem;
-  }
-
-  .search-btn {
-    padding: 5px 10px;
-    font-size: 0.95rem;
-    width: auto;
-  }
-}
 
 
-  
+
+
+

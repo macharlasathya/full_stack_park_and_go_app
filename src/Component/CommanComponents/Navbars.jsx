@@ -20,9 +20,7 @@ const Navbars = () => {
         {/* Navbar Items */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav nav-links">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
-            </li>
+            
             <li className="nav-item dropdown">
               <button
                 className="nav-link dropdown-toggle border-0 bg-transparent"

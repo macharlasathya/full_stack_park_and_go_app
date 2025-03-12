@@ -1,4 +1,4 @@
-    /* Ensure full height of page */
+/* Ensure full height of page */
 html, body {
     height: 100%;
     margin: 0;
@@ -15,9 +15,10 @@ html, body {
     min-height: 100vh;
 }
 
-/* Push footer to the bottom */
+/* Main content with extra bottom padding */
 .main-content {
     flex-grow: 1;
+    padding-bottom: 150px; /* Increased padding for more space */
 }
 
 /* Footer Styling - Full Width & Fixed at Bottom */
@@ -143,6 +144,10 @@ html, body {
     .social-icons {
         margin-top: 10px;
     }
+
+    .main-content {
+        padding-bottom: 160px; /* More padding for smaller screens */
+    }
 }
 
 @media (max-width: 768px) {
@@ -162,6 +167,10 @@ html, body {
     .social-icons a {
         font-size: 18px;
     }
+
+    .main-content {
+        padding-bottom: 170px; /* Extra space for small devices */
+    }
 }
 
 @media (max-width: 480px) {
@@ -180,7 +189,12 @@ html, body {
     .social-icons a {
         font-size: 16px;
     }
+
+    .main-content {
+        padding-bottom: 180px; /* Maximum space for very small devices */
+    }
 }
+
 
 
 
