@@ -126,32 +126,34 @@
     }
 } */
 
+/* About.css - Completely renamed all classes to avoid conflicts */
 
-
-.unique-containers {
-    margin-top: 50px;
+.about-page-container {
+    margin-top: 100px; /* Increased top margin to avoid navbar overlap */
     display: flex;
     justify-content: center;
     width: 100%;
     overflow-x: hidden; /* Hides scrollbar */
     padding: 0 15px;
-    -ms-overflow-style: none;  /* Hides scrollbar in IE & Edge */
-    scrollbar-width: none;  /* Hides scrollbar in Firefox */
-}
-
-.unique-containers::-webkit-scrollbar {
+    -ms-overflow-style: none; /* Hides scrollbar in IE & Edge */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1; /* Lower than navbar's z-index */
+  }
+  
+  .about-page-container::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari */
-}
-
-.unique-card-container {
+  }
+  
+  .about-card-wrapper {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: nowrap; /* Prevents wrapping */
     width: auto;
-}
-
-.custom-unique-card {
+  }
+  
+  .about-card {
     border: 2px dashed lightseagreen;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -162,20 +164,56 @@
     border-radius: 8px;
     width: 250px; /* Fixed width for uniformity */
     flex: 1 1 250px; /* Ensures cards don't wrap */
-}
-
-.custom-unique-card:hover {
+  }
+  
+  .about-card:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Fix */
-@media (max-width: 1024px) {
-    .unique-containers {
-        overflow-x: hidden; /* Keeps scrollbar hidden */
+  }
+  
+  .about-card-highlight {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid lightseagreen;
+  }
+  
+  .about-text-primary {
+    color: #007bff;
+  }
+  
+  .about-text-secondary {
+    color: #6c757d;
+  }
+  
+  .about-text-success {
+    color: #28a745;
+  }
+  
+  .about-text-danger {
+    color: #dc3545;
+  }
+  
+  .about-bold-text {
+    font-weight: 700;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .about-page-container {
+      overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
     }
-
-    .unique-card-container {
-        justify-content: flex-start; /* Aligns cards left */
+    
+    .about-card-wrapper {
+      justify-content: flex-start; /* Aligns cards left */
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .about-page-container {
+      margin-top: 120px; /* Even more space on smaller screens */
+    }
+    
+    .about-card {
+      min-width: 220px; /* Ensure cards maintain a reasonable size */
+    }
+  }

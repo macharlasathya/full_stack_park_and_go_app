@@ -1,0 +1,105 @@
+/* FindCharges.css */
+.page-content {
+  /* Clear specific spacing to avoid overlapping */
+  margin-top: 80px; /* Adjust this value based on your navbar height */
+  min-height: calc(100vh - 180px); /* Adjust based on navbar + footer height */
+  padding: 30px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* Create stacking context */
+  z-index: 1; /* Ensure proper stacking order */
+}
+
+.charges-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative; /* Create stacking context */
+  z-index: 2; /* Higher than page-content to ensure visibility */
+}
+
+.charges-container h2 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.charges-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.charges-table th, 
+.charges-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.charges-table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: 500;
+}
+
+.charges-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.charges-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Fix for potential float issues */
+.charges-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .page-content {
+    margin-top: 60px; /* Smaller margin on mobile */
+    padding: 20px 10px;
+  }
+  
+  .charges-container {
+    padding: 15px;
+  }
+  
+  .charges-table th, 
+  .charges-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    margin-top: 50px; /* Even smaller margin on very small devices */
+  }
+  
+  .charges-container {
+    padding: 10px;
+  }
+  
+  .charges-table th, 
+  .charges-table td {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+}

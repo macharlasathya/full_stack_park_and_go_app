@@ -1,14 +1,14 @@
 
-import UniquesaftyCards from "../LandingJsx/UniquesaftyCards";
-import CompanyOverview from "../LandingJsx/GotoAbout"
-import Feature  from '../LandingJsx/Features'
+import About from "./About";
+import CompanyOverview from "./GotoAbout"
+import Feature  from './Features'
 
-import Blogs from '../LandingJsx/Blogs';
-import FAQ from '../LandingJsx/FAQ'
-import Footer from '../LandingJsx/Last'
+import Blogs from './Blogs';
+import FAQ from './FAQ'
+import Footer from './Last'
 import "../LandingCss/homeLogo.css";
-import EnterApp from '../LandingJsx/EnterApp'
-import  Navbar from '../LandingJsx/Navbar'
+import EnterApp from './EnterApp'
+import  Navbar from './Navbar'
 
 
 function LandingPage() {
@@ -16,7 +16,7 @@ function LandingPage() {
     <>
       < Navbar />
       <EnterApp/>
-      <UniquesaftyCards />
+      <About />
       <CompanyOverview />
       <Feature  />
      <Blogs/>

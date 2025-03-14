@@ -1,5 +1,5 @@
-import react from 'react'
-import Navbars from '../CommanComponents/Navbars';
+import React from 'react'
+import Navbars from '../CommanComponents/NavBars';
 
 
 const Home = () =>
