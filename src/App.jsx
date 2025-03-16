@@ -10,7 +10,7 @@ import About from "./Component/LandingJsx/About";
 import Feature from "./Component/LandingJsx/Features";
 import Blogs from "./Component/LandingJsx/Blogs";
 import FAQ from "./Component/LandingJsx/FAQ";
-import Navbars from "./Component/CommanComponents/NavBars";
+import NavBars from "./Component/CommanComponents/NavBars";
 import "./App.css"; // Ensure this contains necessary styles
 import ParkingSearchCard from "./Component/CommanComponents/ParkingSerachCard"
 import FindCharges from './Component/CommanComponents/FindCharges'
@@ -21,7 +21,7 @@ import CustomerDetails from "./Component/CommanComponents/CustomerDetails"
 function App() {
   return (
     <div className="page-container">
-      <Navbars />
+      <NavBars />
       <div className="main-content">
         <Routes>
           <Route path="/signup" element={<SignupForm />} />
