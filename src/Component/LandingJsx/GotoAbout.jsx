@@ -1,6 +1,7 @@
 import React from "react";
 import "../../Component/LandingCss/GotoAbout.css";
-import Gotoabout from "/src/assets/GotoAbout.jpg"; 
+// import Gotoabout from "/src/assets/GotoAbout.jpg"; 
+import Gotoabout from "../../assets/Gotoabout.jpg";
 
 const CompanyOverview = () => {
   return (
