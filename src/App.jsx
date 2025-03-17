@@ -5,17 +5,17 @@ import LandingPage from "./Component/LandingJsx/LandingPage";
 import SignupForm from "./Component/LandingJsx/SignupForm";
 import Home from "./Component/LandingJsx/Home";
 import SubmitForm from "./Component/LandingJsx/SubmitForm";
-import Footer from "./Component/CommanComponents/Footers";
+import Footer from "./Component/ComponentComman/Footers";
 import About from "./Component/LandingJsx/About";
 import Feature from "./Component/LandingJsx/Features";
 import Blogs from "./Component/LandingJsx/Blogs";
 import FAQ from "./Component/LandingJsx/FAQ";
-import NavBars from "./Component/CommanComponents/NavBars";
+import NavBars from "./Component/ComponentComman/NavBars";
 import "./App.css"; // Ensure this contains necessary styles
-import ParkingSearchCard from "./Component/CommanComponents/ParkingSerachCard"
-import FindCharges from './Component/CommanComponents/FindCharges'
-import ParkingBooking from "./Component/CommanComponents/ParkingBooking"
-import CustomerDetails from "./Component/CommanComponents/CustomerDetails"
+import ParkingSearchCard from "./Component/ComponentComman/ParkingSerachCard"
+import FindCharges from './Component/ComponentComman/FindCharges'
+import ParkingBooking from "./Component/ComponentComman/ParkingBooking"
+import CustomerDetails from "./Component/ComponentComman/CustomerDetails"
 
 
 function App() {
