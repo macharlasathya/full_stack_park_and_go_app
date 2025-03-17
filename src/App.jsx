@@ -33,7 +33,7 @@ function App() {
           <Route path="/" element={ <ParkingSearchCard />}/>
           <Route path="/FindCharges" element={<FindCharges/>}/>
           <Route path="/ParkingBooking" element={<ParkingBooking/>}/>
-          <Route path="/CustomerDetails" element={<CustomerDetails/>}/>
+          <Route path="/CustomerDetails/:id" element={<CustomerDetails/>}/>
         </Routes>
       </div>
     <Footer />

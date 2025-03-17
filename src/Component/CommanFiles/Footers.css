@@ -14,28 +14,28 @@ html, body {
 .footer {
     background-color: black;
     color: white;
-    padding: 10px 0;  /* Reduced padding */
+    padding: 20px 0;
     width: 100%;
     position: relative;
 }
 
 /* Footer container */
 .footer .container-fluid {
-    padding: 0 20px;  /* Reduced side padding */
+    padding: 0 20px;
 }
 
 /* Footer section titles */
 .footer h5 {
-    font-size: 14px;  /* Smaller font size */
-    margin-bottom: 5px;  /* Reduced spacing */
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 /* Paragraphs and links */
 .footer p, 
 .footer a {
-    font-size: 12px;   /* Reduced font size */
+    font-size: 14px;
     color: #aaa;
-    line-height: 1.3;  /* Reduced line height */
+    line-height: 1.5;
     text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ html, body {
 /* Social icons styling */
 .footer .d-flex a {
     color: gold;
-    font-size: 16px;  /* Smaller icon size */
+    font-size: 18px;
     transition: color 0.3s;
 }
 
@@ -56,8 +56,8 @@ html, body {
 
 /* Footer bottom section */
 .footer .text-center {
-    font-size: 10px;   /* Smaller text for copyright */
-    padding-top: 5px;  /* Less padding */
+    font-size: 12px;
+    padding-top: 10px;
     border-top: 1px solid #444;
 }
 
@@ -65,7 +65,7 @@ html, body {
 @media (max-width: 768px) {
     .footer .d-flex {
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
     }
 
     .footer h5 {
@@ -75,10 +75,9 @@ html, body {
     .footer p, .footer ul {
         text-align: center;
     }
-    /* Add spacing between footer sections */
-.footer .col-md-3 {
-    margin-bottom: 20px;  /* Adjust the gap as needed */
-}
 
+    .footer .col-md-3 {
+        margin-bottom: 20px;
+    }
 }
 
