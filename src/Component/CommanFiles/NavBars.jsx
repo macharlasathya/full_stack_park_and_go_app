@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import './NavBars.css';
 import logoImage from '../../assets/AppLog.png'; // Adjust this path based on your project structure
@@ -11,9 +12,11 @@ function NavBars() {
         <Link className="navbar-brand" to="/">
           <div className="brand-container">
             <div className="brand-logo">
-              <img src={logoImage} alt="Park'n Go Logo" className="rounded-logo" />
+              <img src={logoImage} alt="Easy Parking Solutions Logo" className="rounded-logo" />
             </div>
-            <span className="brand-text">ParkNGo –Quick parking, easy getaways</span>
+            <div className="brand-text-container">
+              <span className="brand-text">Easy Parking Solutions</span>
+            </div>
           </div>
         </Link>
         <button

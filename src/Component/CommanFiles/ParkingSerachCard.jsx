@@ -1,7 +1,4 @@
 
-
-
-
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -15,25 +12,24 @@ const ParkingSearchCard = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Force component to unmount and remount when navigation happens
+
   useEffect(() => {
     console.log("Current path:", location.pathname);
-    // Reset search state when returning to this component
+    
     if (location.pathname === "/") {
       setIsSearching(false);
     }
   }, [location.pathname]);
 
   const handleSearch = (e) => {
-    // Prevent form submission if this is triggered by a form
+    
     if (e) e.preventDefault();
     
     if (searchText.trim()) {
       console.log("Searching for:", searchText);
       setIsSearching(true);
       
-      // Use React Router's navigate instead of direct window.location
-      // This prevents full page reloads and maintains React state
+      
       navigate(`/ParkingBooking?location=${encodeURIComponent(searchText)}`);
     }
   };
@@ -46,7 +42,7 @@ const ParkingSearchCard = () => {
           const { latitude, longitude } = position.coords;
           console.log(`Got coordinates: ${latitude}, ${longitude}`);
           
-          // Use React Router's navigate instead of direct window.location
+          
           navigate(`/ParkingBooking?lat=${latitude}&lng=${longitude}`);
         },
         (error) => {
@@ -102,7 +98,7 @@ const ParkingSearchCard = () => {
                   <input
                     type="text"
                     className="search-input"
-                    placeholder="Enter location or ZIP code..."
+                    placeholder="Enter location"
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                   />

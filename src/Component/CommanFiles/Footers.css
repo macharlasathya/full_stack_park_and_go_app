@@ -12,72 +12,112 @@ html, body {
 
 /* Footer styles */
 .footer {
-    background-color: black;
+    background-color:red;
     color: white;
-    padding: 20px 0;
+    padding: 30px 0;
     width: 100%;
     position: relative;
 }
 
 /* Footer container */
 .footer .container-fluid {
-    padding: 0 20px;
+    padding: 0 50px; /* Increased side padding for more equal spacing */
+}
+
+/* Row spacing */
+.footer .row {
+    column-gap: 0; /* Reset any column gap */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+/* Individual columns */
+.footer .col-md-3 {
+    padding: 0 20px; /* Equal padding for each column */
+    box-sizing: border-box;
 }
 
 /* Footer section titles */
 .footer h5 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 18px;
+    font-weight: 600;
 }
 
 /* Paragraphs and links */
 .footer p, 
 .footer a {
-    font-size: 14px;
+    font-size: 16px;
     color: #aaa;
-    line-height: 1.5;
+    line-height: 1.7;
     text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
 }
 
 .footer a:hover {
     color: white;
+    transition: color 0.2s ease;
+}
+
+/* Location icons styling */
+.footer .location-icon {
+    color: gold;
+    margin-right: 5px;
+    font-size: 14px;
 }
 
 /* Social icons styling */
 .footer .d-flex a {
     color: gold;
-    font-size: 18px;
+    font-size: 24px;
     transition: color 0.3s;
 }
 
 .footer .d-flex a:hover {
     color: white;
+    transform: scale(1.1);
 }
 
 /* Footer bottom section */
 .footer .text-center {
-    font-size: 12px;
-    padding-top: 10px;
+    font-size: 14px;
+    padding-top: 15px;
     border-top: 1px solid #444;
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
-    .footer .d-flex {
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .footer h5 {
-        text-align: center;
-    }
-
-    .footer p, .footer ul {
-        text-align: center;
-    }
-
-    .footer .col-md-3 {
-        margin-bottom: 20px;
+@media (max-width: 992px) {
+    .footer .container-fluid {
+        padding: 0 30px; /* Adjust side padding for smaller screens */
     }
 }
 
+@media (max-width: 768px) {
+    .footer .d-flex {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footer h5 {
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .footer p, .footer ul {
+        text-align: center;
+    }
+    
+    .footer .col-md-3 {
+        margin-bottom: 30px;
+        padding: 0 15px; /* Smaller padding on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer .container-fluid {
+        padding: 0 20px; /* Even smaller side padding for very small screens */
+    }
+}
