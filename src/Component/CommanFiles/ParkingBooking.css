@@ -1,5 +1,4 @@
-
-    /* ParkingBooking.css - Updated with unique class names */
+/* ParkingBooking.css - Updated with unique class names */
 
 /* Search Results Page Styles - renamed to avoid conflicts */
 .parking-results-page {
@@ -23,6 +22,48 @@
   color: #2c3e50;
   font-weight: 600;
   font-size: 1.75rem; /* Adjusted size */
+}
+
+/* Filter and Sort Controls - added new styles */
+.parking-filter-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.parking-filter-label, .parking-sort-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.parking-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.parking-filter-buttons .btn {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.parking-sort-select {
+  width: 100%;
+}
+
+.parking-locations-count {
+  margin-bottom: 1.5rem;
+}
+
+.parking-locations-count .badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #6c757d;
 }
 
 /* Parking Card Styles - renamed to avoid conflicts */
@@ -65,6 +106,18 @@
   font-size: 0.9rem;
 }
 
+.parking-type-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(44, 62, 80, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 .parking-spot-title {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
@@ -78,15 +131,35 @@
   font-size: 0.9rem;
 }
 
+/* Enhanced badge styles */
+.parking-spot-details .badge {
+  padding: 0.5rem 0.6rem;
+  font-weight: 500;
+}
+
 /* Rating and availability styles */
 .parking-spot-rating {
   display: flex;
   align-items: center;
+  font-weight: 600;
 }
 
 .parking-spot-rating .bi-star-fill {
   color: #ffc107;
   margin-right: 0.25rem;
+}
+
+/* Book now button enhancement */
+.parking-book-btn {
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.parking-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Loading spinner */
@@ -108,14 +181,28 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 992px) {
+  .parking-filter-container {
+    padding: 1.25rem;
+  }
+}
+
 @media (max-width: 768px) {
   .parking-results-header {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+    
+  .parking-results-header p {
+    margin-top: 1rem;
   }
   
-  .parking-results-header p {
-      margin-top: 1rem;
+  .parking-filter-container .row {
+    flex-direction: column;
+  }
+  
+  .parking-sort-group {
+    margin-top: 1rem;
   }
 }
 
@@ -138,5 +225,3 @@
   font-weight: 600;
 }
 
-/* Rest of your existing styles would continue here... */
-/* I'm including just the main changes needed to fix the overlapping issue */

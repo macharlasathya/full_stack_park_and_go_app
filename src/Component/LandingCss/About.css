@@ -1,234 +1,104 @@
-/* NavBar.css */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-
-/* Complete reset for all elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* AboutSection.css - Completely isolated CSS with unique class names */
+.abt-section-container {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  /* Add margin-top to prevent overlapping with the section above */
+  margin-top: 50px;
+  /* You might also need to ensure a clean break from the previous section */
+  clear: both;
 }
 
-/* Force the document to have no spacing */
-html, body, #root, .App {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  min-height: 100% !important;
-  overflow-x: hidden;
+.abt-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Override any Bootstrap styling that might be causing issues */
-.container, .container-fluid, .container-lg, .container-md, 
-.container-sm, .container-xl, .container-xxl {
-  --bs-gutter-x: 0;
-  --bs-gutter-y: 0;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: auto;
-  margin-left: auto;
+.abt-feature-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-/* Make sure navbar is at the very top with light background */
-.custom-navbar {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  background-color: #f0f2f5;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  z-index: 1030;
-  display: block;
-  margin: 0 !important;
-  padding: 0.75rem 0 !important;
+.abt-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Get rid of any flex spacing issues */
-.navbar > .container-fluid {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
+.abt-feature-card-active {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.abt-card-content {
+  padding: 2rem 1.5rem;
+  height: 100%;
   display: flex;
-  align-items: center;
-  margin: 0 !important;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.brand-container {
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-  flex-wrap: nowrap;
+.abt-card-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: 700;
 }
 
-/* Increased logo size */
-.rounded-logo {
+.abt-card-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
   width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #1a237e;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(26, 35, 126, 0.2);
+  height: 3px;
+  background-color: currentColor;
 }
 
-.brand-text-container {
-  display: flex;
-  align-items: center;
-  max-width: 100%;
+.abt-card-description {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.brand-text {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #1a237e;
-  margin-left: 0.75rem;
-  white-space: nowrap;
+/* Color themes with unique class names */
+.abt-theme-blue {
+  background-color: #e8f4ff;
+  color: #0066cc;
 }
 
-.contact-number {
-  display: flex;
-  align-items: center;
-  color: #1a237e;
-  font-weight: 500;
-  background-color: rgba(26, 35, 126, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  flex-shrink: 0;
+.abt-theme-gray {
+  background-color: #f2f2f7;
+  color: #5a5a5a;
 }
 
-.contact-number i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
+.abt-theme-green {
+  background-color: #e8f8ef;
+  color: #28a745;
 }
 
-/* Added extra margin to push menu items further from the brand */
-.navbar-nav {
-  margin-left: 2rem;
+.abt-theme-red {
+  background-color: #fff1f0;
+  color: #dc3545;
 }
 
-.navbar-nav .nav-link {
-  color: #ff9800;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-  color: #e65100;
-}
-
-.dropdown-menu {
-  border-radius: 0.25rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  border: none;
-  z-index: 1031;
-}
-
-.dropdown-item:hover {
-  background-color: #f1f5ff;
-}
-
-/* Create space below the navbar for content */
-main, .content {
-  margin-top: 80px;
-}
-
-/* Override Bootstrap toggler icon color */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2826, 35, 126, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.navbar-toggler {
-  border-color: rgba(26, 35, 126, 0.5);
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(26, 35, 126, 0.25);
-}
-
-/* Responsive styles */
-@media (max-width: 1199.98px) {
-  .brand-text {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .contact-number {
-    margin-top: 1rem;
-    justify-content: center;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .abt-card-grid {
+    grid-template-columns: 1fr;
   }
   
-  main, .content {
-    margin-top: 70px;
+  .abt-card-content {
+    padding: 1.5rem 1rem;
   }
   
-  /* Ensure proper spacing on mobile */
-  .brand-container {
-    margin-right: 0;
-    flex-wrap: nowrap;
-    max-width: 80%;
+  .abt-card-heading {
+    font-size: 1.3rem;
   }
-  
-  .navbar-nav {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-  
-  /* Adjusted logo size for tablets */
-  .rounded-logo {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .brand-text {
-    font-size: 1rem;
-  }
-  
-  .navbar > .container-fluid {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  /* Keep logo relatively large on mobile */
-  .rounded-logo {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .brand-text {
-    font-size: 0.9rem;
-  }
-  
-  .brand-container {
-    max-width: 75%;
-  }
-  
-  /* Still keeping logo substantial on smallest screens */
-  .rounded-logo {
-    width: 38px;
-    height: 38px;
-  }
-  
-  .contact-number {
-    font-size: 0.9rem;
-  }
-  
-  .contact-number i {
-    font-size: 1rem;
-  }
-}
-
-/* This is to prevent any other styling from pushing the navbar down */
-body::before {
-  display: none !important;
-}
-
-/* Override any other fixed elements */
-body > *:first-child {
-  margin-top: 0 !important;
 }

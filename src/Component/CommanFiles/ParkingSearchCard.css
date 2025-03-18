@@ -12,7 +12,7 @@
 
 /* Background container with image */
 .background-container {
-  background-image: url('/src/assets/ram.jpg'); /* Replace with your actual image path */
+  background-image: url('/src/assets/drive.jpg'); /* Replace with your actual image path */
   background-size: cover;
   background-position: center;
   min-height: 100vh;

@@ -114,7 +114,7 @@ const ParkingSearchCard = () => {
                     disabled={isSearching}
                   >
                     <i className="bi bi-geo me-2"></i>
-                    Use my current location
+                    See All Locations
                   </button>
                 </div>
 
@@ -148,3 +148,4 @@ const ParkingSearchCard = () => {
 };
 
 export default ParkingSearchCard;
+
