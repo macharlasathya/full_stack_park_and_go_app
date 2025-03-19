@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import "./FindCharges.css";
 
@@ -36,6 +39,41 @@ const FindCharges = () => {
       vehicles: [
         { type: "Bike", size: "Medium", hourly: "₹22", daily: "₹110" },
         { type: "Car", size: "Small", hourly: "₹45", daily: "₹280" },
+      ],
+    },
+    {
+      location: "Secunderabad Railway Parking",
+      vehicles: [
+        { type: "Bike", size: "Small", hourly: "₹15", daily: "₹80" },
+        { type: "Car", size: "Medium", hourly: "₹40", daily: "₹250" },
+      ],
+    },
+    {
+      location: "Miyapur Park & Ride",
+      vehicles: [
+        { type: "Bike", size: "Medium", hourly: "₹20", daily: "₹100" },
+        { type: "Car", size: "Large", hourly: "₹50", daily: "₹300" },
+      ],
+    },
+    {
+      location: "Kondapur Central Parking",
+      vehicles: [
+        { type: "Bike", size: "Small", hourly: "₹22", daily: "₹110" },
+        { type: "Car", size: "Medium", hourly: "₹55", daily: "₹320" },
+      ],
+    },
+    {
+      location: "Ameerpet Metro Parking",
+      vehicles: [
+        { type: "Bike", size: "Medium", hourly: "₹18", daily: "₹90" },
+        { type: "Car", size: "Small", hourly: "₹45", daily: "₹280" },
+      ],
+    },
+    {
+      location: "Jubilee Hills Premium Parking",
+      vehicles: [
+        { type: "Bike", size: "Large", hourly: "₹25", daily: "₹130" },
+        { type: "Car", size: "Large", hourly: "₹65", daily: "₹380" },
       ],
     },
   ];

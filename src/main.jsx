@@ -14,10 +14,11 @@ import LandingPage from './Component/LandingJsx/LandingPage.jsx';
 createRoot(document.getElementById('root')).render(
  
     <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
+    {/* <LandingPage/> */}
+     </BrowserRouter>
 
-    // <LandingPage/>
+   
 
     
     

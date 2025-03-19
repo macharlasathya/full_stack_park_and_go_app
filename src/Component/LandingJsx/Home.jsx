@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbars from '../CommanFiles/NavBars';
+import NavBars from '../CommanFiles/NavBars';
 
 
 const Home = () =>
 {
     return(
         <>
-        <Navbars />
+        <NavBars />
         </>
     )
 }

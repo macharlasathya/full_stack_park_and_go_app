@@ -42,7 +42,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.charges-table th, 
+.charges-table th,
 .charges-table td {
   padding: 12px 15px;
   text-align: left;
@@ -81,7 +81,7 @@
     padding: 15px;
   }
   
-  .charges-table th, 
+  .charges-table th,
   .charges-table td {
     padding: 8px 10px;
     font-size: 14px;
@@ -97,7 +97,7 @@
     padding: 10px;
   }
   
-  .charges-table th, 
+  .charges-table th,
   .charges-table td {
     padding: 6px 8px;
     font-size: 13px;
