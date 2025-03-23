@@ -1,0 +1,104 @@
+/* AboutSection.css - Completely isolated CSS with unique class names */
+.abt-section-container {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  /* Add margin-top to prevent overlapping with the section above */
+  margin-top: 50px;
+  /* You might also need to ensure a clean break from the previous section */
+  clear: both;
+}
+
+.abt-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.abt-feature-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.abt-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.abt-feature-card-active {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.abt-card-content {
+  padding: 2rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.abt-card-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.abt-card-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: currentColor;
+}
+
+.abt-card-description {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Color themes with unique class names */
+.abt-theme-blue {
+  background-color: #e8f4ff;
+  color: #0066cc;
+}
+
+.abt-theme-gray {
+  background-color: #f2f2f7;
+  color: #5a5a5a;
+}
+
+.abt-theme-green {
+  background-color: #e8f8ef;
+  color: #28a745;
+}
+
+.abt-theme-red {
+  background-color: #fff1f0;
+  color: #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .abt-card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .abt-card-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .abt-card-heading {
+    font-size: 1.3rem;
+  }
+}

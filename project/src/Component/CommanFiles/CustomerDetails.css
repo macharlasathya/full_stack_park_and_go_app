@@ -1,0 +1,383 @@
+/* CustomerDetails.css */
+.parking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.parking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.parking-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.parking-logo svg {
+  color: #3b82f6;
+}
+
+.parking-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.parking-location-info {
+  background-color: #f0f9ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+}
+
+.parking-location-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.parking-error-message {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ef4444;
+}
+
+.parking-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .parking-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.parking-form {
+  width: 100%;
+}
+
+.parking-details-section,
+.parking-map-payment-section {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.parking-details-section {
+  padding: 20px;
+}
+
+.parking-map-payment-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.map-section,
+.payment-section {
+  padding: 20px;
+}
+
+.map-section {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="datetime-local"]:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.time-picker-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.map-container {
+  height: 250px;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.coordinates-info {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 5px 0 0;
+  text-align: right;
+}
+
+.qr-container {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 230px;
+  margin-bottom: 15px;
+}
+
+.qr-code {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.qr-placeholder {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.price-info {
+  background-color: #f9fafb;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.price-row.total {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 8px;
+  padding-top: 8px;
+  font-weight: 600;
+}
+
+.form-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.info-item {
+  background-color: #f9fafb;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.info-item span {
+  display: block;
+  margin-bottom: 4px;
+  color: #6b7280;
+}
+
+.status-pending {
+  color: #f59e0b;
+}
+
+.status-paid {
+  color: #10b981;
+}
+
+.payment-success-info {
+  background-color: #ecfdf5;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  color: #047857;
+  font-size: 0.9rem;
+}
+
+.payment-success-info p {
+  margin: 5px 0;
+}
+
+.verify-button,
+.register-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.verify-button:hover,
+.register-button:hover {
+  background-color: #2563eb;
+}
+
+.verify-button:disabled,
+.register-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Modal Styles */
+.verification-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.verification-modal {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.verification-modal h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.verification-modal p {
+  margin-bottom: 20px;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.verification-error {
+  color: #b91c1c;
+  background-color: #fef2f2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.verification-input-container {
+  margin-bottom: 20px;
+}
+
+.verification-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 2px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.verification-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.cancel-button {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: white;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #f9fafb;
+}
+
+.submit-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #2563eb;
+}
+
+/* Fix for making sure sections don't overlap */
+@media (max-width: 767px) {
+  .parking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .time-picker-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-info {
+    grid-template-columns: 1fr;
+  }
+}
