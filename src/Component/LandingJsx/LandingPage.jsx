@@ -32,34 +32,99 @@
 
 // export default LandingPage;
 
+// import { Link } from "react-router-dom";
+// import About from "./About";
+// import CompanyOverview from "./GotoAbout";
+// import Feature from './Features';
+// import Blogs from './Blogs';
+// import FAQ from './FAQ';
+// import Footer from './Last';
+// import "../LandingCss/homeLogo.css";
+// import Navbar from './Navbar';
+// // Import EnterApp component but we'll wrap it with Link
+// import EnterApp from './EnterApp';
+
+// function LandingPage() {
+//   return (
+//     <>
+//       <Navbar />
+//       {/* Wrap the EnterApp component with Link to navigate to signup */}
+//       <Link to="/signup" style={{ textDecoration: 'none' }}>
+//         <EnterApp />
+//       </Link>
+//       <About />
+//       <CompanyOverview />
+//       <Feature />
+//       <Blogs />
+//       <FAQ title="Frequently Asked Questions!" />
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default LandingPage;
+// import { Link } from "react-router-dom";
+// import About from "./About";
+// import CompanyOverview from "./GotoAbout";
+// import Feature from './Features';
+// import Blogs from './Blogs';
+// import FAQ from './FAQ';
+// import Footer from './Last';
+// import "../LandingCss/homeLogo.css";
+// import Navbar from './Navbar';
+// // Import EnterApp component but we'll wrap it with Link
+// import EnterApp from './EnterApp';
+
+// function LandingPage() {
+//   return (
+//     <>
+//       <Navbar />
+//       {/* Wrap the entire EnterApp inside Link */}
+//       <Link to="/signup" style={{ textDecoration: 'none' }}>
+//         <EnterApp />
+//       </Link>
+//       <About />
+//       <CompanyOverview />
+//       <Feature />
+//       <Blogs />
+//       <FAQ title="Frequently Asked Questions!" />
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default LandingPage;
+
+
 import { Link } from "react-router-dom";
 import About from "./About";
 import CompanyOverview from "./GotoAbout";
-import Feature from './Features';
-import Blogs from './Blogs';
-import FAQ from './FAQ';
-import Footer from './Last';
+import Feature from "./Features";
+import Blogs from "./Blogs";
+import FAQ from "./FAQ";
+import Footer from "./Last";
 import "../LandingCss/homeLogo.css";
-import Navbar from './Navbar';
-// Import EnterApp component but we'll wrap it with Link
-import EnterApp from './EnterApp';
+import Navbar from "./Navbar";
+import EnterApp from "./EnterApp";
+import SubmitForm from "./SubmitForm";
 
 function LandingPage() {
   return (
     <>
       <Navbar />
-      {/* Wrap the EnterApp component with Link to navigate to signup */}
-      <Link to="/signup" style={{ textDecoration: 'none' }}>
-        <EnterApp />
-      </Link>
+      {/* Instead of wrapping EnterApp with <Link>, move the Link inside */}
+      <EnterApp />
       <About />
       <CompanyOverview />
       <Feature />
       <Blogs />
       <FAQ title="Frequently Asked Questions!" />
+      <SubmitForm/>
       <Footer />
     </>
   );
 }
 
 export default LandingPage;
+
+

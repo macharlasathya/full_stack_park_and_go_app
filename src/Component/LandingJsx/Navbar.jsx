@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">Register Spot</a>
+              <a className="nav-link" href="#SubmitForm">Register Spot</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#Aboutsection">About</a>
@@ -61,12 +61,5 @@ export default Navbar;
 
 
 
-
-
-
-
-
-
- 
 
 
