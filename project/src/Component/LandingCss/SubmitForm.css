@@ -1,16 +1,13 @@
-/* ParkSpotSubmitForm.css - Using completely unique class names with 'ps-' prefix */
-
-/* Base container */
 .ps-form-outer-wrapper {
-  position: static; 
-  padding: 80px 0 60px; /* Increased top padding to prevent overlap */
-  margin-top: 60px; /* Additional margin to separate from previous section */
+  position: static;
+  padding: 80px 0 60px;
+  margin-top: 60px;
   background-color: #f4f7fc;
   width: 100%;
-  z-index: 1; /* Ensure proper stacking context */
+  z-index: 1;
 }
 
-/* Create clear separation from previous elements */
+
 .ps-form-outer-wrapper::before {
   content: '';
   display: block;
@@ -20,7 +17,7 @@
   width: 100%;
 }
 
-/* Inner container with width constraints */
+
 .ps-form-inner-container {
   width: 100%;
   max-width: 1140px;
@@ -30,7 +27,7 @@
   justify-content: center;
 }
 
-/* Card container */
+
 .ps-form-card {
   width: 100%;
   max-width: 500px;
@@ -40,7 +37,7 @@
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Form heading */
+
 .ps-form-heading {
   color: #007bff;
   font-weight: 600;
@@ -49,18 +46,17 @@
   font-size: 24px;
 }
 
-/* Form itself */
+
 .ps-form {
   width: 100%;
 }
 
-/* Form group */
 .ps-form-group {
   margin-bottom: 20px;
   width: 100%;
 }
 
-/* Labels */
+
 .ps-form-label {
   display: block;
   margin-bottom: 8px;
@@ -69,7 +65,7 @@
   font-size: 16px;
 }
 
-/* Input fields */
+
 .ps-form-input,
 .ps-form-textarea {
   width: 100%;
@@ -87,7 +83,7 @@
   outline: none;
 }
 
-/* Input with error */
+
 .ps-input-error {
   border-color: #dc3545;
 }
@@ -96,14 +92,14 @@
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
 }
 
-/* Error message */
+
 .ps-error-message {
   color: #dc3545;
   font-size: 14px;
   margin-top: 6px;
 }
 
-/* Submit button */
+
 .ps-submit-button {
   display: block;
   width: 100%;
@@ -127,13 +123,13 @@
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .ps-form-card {
     padding: 25px;
     max-width: 100%;
   }
-  
+
   .ps-form-outer-wrapper {
     padding: 60px 0 40px;
   }
@@ -143,23 +139,15 @@
   .ps-form-card {
     padding: 20px;
   }
-  
+
   .ps-form-heading {
     font-size: 22px;
     margin-bottom: 20px;
   }
-  
+
   .ps-form-input,
   .ps-form-textarea,
   .ps-submit-button {
     padding: 10px 12px;
   }
 }
-
-
-
-
-
-
-
-

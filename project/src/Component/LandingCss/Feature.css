@@ -1,94 +1,87 @@
-
-
-
-/* ParkSpotFeatures.css - Completely unique namespace with ps- prefix */
-/* ParkSpotFeatures.css - Two cards per row layout */
-/* ParkSpotFeatures.css - Simple two-column grid layout */
-
 .parkspot-features {
-    margin-top: 100px; /* Ensure no overlap with previous section */
-    padding: 40px 0;
-    width: 100%;
-  }
-  
-  .parkspot-features-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  margin-top: 100px;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.parkspot-features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.parkspot-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.parkspot-feature-item {
+  width: 100%;
+}
+
+.parkspot-feature-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.parkspot-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.parkspot-feature-icon {
+  font-size: 2.2rem;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.parkspot-feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.parkspot-feature-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+
+@media (max-width: 768px) {
   .parkspot-features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always two columns */
-    gap: 30px;
-    width: 100%;
+    grid-template-columns: 1fr;
   }
-  
-  .parkspot-feature-item {
-    width: 100%;
+
+  .parkspot-features {
+    margin-top: 80px;
   }
-  
+
   .parkspot-feature-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
+    padding: 25px;
   }
-  
-  .parkspot-feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 480px) {
+  .parkspot-features {
+    margin-top: 60px;
+    padding: 30px 0;
   }
-  
-  .parkspot-feature-icon {
-    font-size: 2.2rem;
-    color: #4CAF50;
-    margin-bottom: 15px;
+
+  .parkspot-feature-card {
+    padding: 20px;
   }
-  
+
   .parkspot-feature-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333333;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
   }
-  
-  .parkspot-feature-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555555;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .parkspot-features-grid {
-      grid-template-columns: 1fr; /* Single column on mobile */
-    }
-    
-    .parkspot-features {
-      margin-top: 80px;
-    }
-    
-    .parkspot-feature-card {
-      padding: 25px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .parkspot-features {
-      margin-top: 60px;
-      padding: 30px 0;
-    }
-    
-    .parkspot-feature-card {
-      padding: 20px;
-    }
-    
-    .parkspot-feature-title {
-      font-size: 1.3rem;
-    }
-  }
+}

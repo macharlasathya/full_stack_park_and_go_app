@@ -1,18 +1,17 @@
-/* Reset default margins and paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Padding to Prevent Overlapping with Fixed Navbar */
+
 body {
-    padding-top: 80px; /* Adjust to match navbar height */
+    padding-top: 80px;
     margin: 0;
     overflow-x: hidden;
 }
 
-/* Navbar Styling */
+
 .navbar {
     width: 100%;
     background-color: #252a34;
@@ -27,7 +26,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar Brand & Logo */
 .navbar-logo {
     width: 60px;
     height: 60px;
@@ -40,7 +38,6 @@ body {
     transform: scale(1.08);
 }
 
-/* Navbar Title */
 .navbar-title {
     font-size: 16px;
     font-weight: 600;
@@ -48,7 +45,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* Navbar Links */
+
 .navbar-nav {
     display: flex;
     gap: 20px;
@@ -68,7 +65,7 @@ body {
     color: #ff5733 !important;
 }
 
-/* Right Side (Phone Number & Login Button) */
+
 .navbar-right {
     display: flex;
     align-items: center;
@@ -81,7 +78,7 @@ body {
     font-weight: 600;
 }
 
-/* Login Button */
+
 .navbar-login {
     font-size: 14px;
     font-weight: 600;
@@ -97,7 +94,7 @@ body {
     background-color: #c0392b;
 }
 
-/* Navbar Toggler (For Mobile) */
+
 .navbar-toggler {
     font-size: 24px;
     background: none;
@@ -110,7 +107,7 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Responsive Design */
+
 @media (max-width: 991px) {
     .navbar {
         flex-direction: column;

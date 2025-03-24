@@ -1,6 +1,4 @@
 
-
-
 import React from "react";
 import "../LandingCss/Feature.css";
 

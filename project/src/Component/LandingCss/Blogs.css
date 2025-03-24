@@ -1,15 +1,14 @@
-/* Blogs.css - Using extremely specific and unique class names to avoid conflicts */
 .parknblog-section {
   padding: 3rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  /* Add this to prevent overlapping with the section above */
-  margin-top: 50px; 
+
+  margin-top: 50px;
 }
 
 .parknblog-grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -65,11 +64,11 @@
   margin-bottom: 1rem;
   color: #333;
   line-height: 1.4;
-  /* Fix for the webkit-line-clamp issue */
+
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 3.5em; /* Approximately 2 lines of text */
+  max-height: 3.5em;
   word-wrap: break-word;
 }
 
@@ -97,22 +96,24 @@
   background-color: #0052a3;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 992px) {
   .parknblog-grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Two cards per row on medium screens */
+    grid-template-columns: repeat(2, 1fr);
+
   }
 }
 
 @media (max-width: 600px) {
   .parknblog-grid-container {
-    grid-template-columns: 1fr; /* One card per row on small screens */
+    grid-template-columns: 1fr;
+
   }
-  
+
   .parknblog-card-content {
     padding: 1.25rem;
   }
-  
+
   .parknblog-card-title {
     font-size: 1.2rem;
   }

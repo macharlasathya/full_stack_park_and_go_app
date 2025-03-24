@@ -1,13 +1,11 @@
-/* AboutSection.css - Completely isolated CSS with unique class names */
+
 .abt-section-container {
   padding: 3rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  /* Add margin-top to prevent overlapping with the section above */
-  margin-top: 50px;
-  /* You might also need to ensure a clean break from the previous section */
+ margin-top: 50px;
   clear: both;
 }
 
@@ -67,7 +65,7 @@
   line-height: 1.6;
 }
 
-/* Color themes with unique class names */
+
 .abt-theme-blue {
   background-color: #e8f4ff;
   color: #0066cc;
@@ -88,7 +86,7 @@
   color: #dc3545;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .abt-card-grid {
     grid-template-columns: 1fr;
