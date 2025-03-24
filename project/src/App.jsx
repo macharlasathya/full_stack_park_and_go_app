@@ -3,7 +3,7 @@ import axios from "axios";
 import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import LandingPage from "./Component/LandingJsx/LandingPage";
 import SignupForm from "./Component/LandingJsx/SignupForm";
-import Home from "./Component/LandingJsx/Home";
+// import Home from "./Component/LandingJsx/Home";
 import SubmitForm from "./Component/LandingJsx/SubmitForm";
 import Footer from "./Component/CommanFiles/Footers";
 import About from "./Component/LandingJsx/About";

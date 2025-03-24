@@ -1,15 +1,17 @@
-/* NavBar.css */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
-/* Complete reset for all elements */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Force the document to have no spacing */
-html, body, #root, .App {
+
+html,
+body,
+#root,
+.App {
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
@@ -17,9 +19,14 @@ html, body, #root, .App {
   overflow-x: hidden;
 }
 
-/* Override any Bootstrap styling that might be causing issues */
-.container, .container-fluid, .container-lg, .container-md, 
-.container-sm, .container-xl, .container-xxl {
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
   padding-right: 0;
@@ -28,13 +35,12 @@ html, body, #root, .App {
   margin-left: auto;
 }
 
-/* Make sure navbar is at the very top with a light blue background instead of white */
 .custom-navbar {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  background-color: #4F959D; /* Changed from #eaeef2 to a nicer light blue */
+  background-color: #4F959D;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   z-index: 1030;
   display: block;
@@ -42,8 +48,8 @@ html, body, #root, .App {
   padding: 0.75rem 0 !important;
 }
 
-/* Get rid of any flex spacing issues */
-.navbar > .container-fluid {
+
+.navbar>.container-fluid {
   width: 100% !important;
   max-width: 100% !important;
   padding-left: 2rem !important;
@@ -60,7 +66,7 @@ html, body, #root, .App {
   flex-wrap: nowrap;
 }
 
-/* Increased logo size */
+
 .rounded-logo {
   width: 50px;
   height: 50px;
@@ -91,7 +97,7 @@ html, body, #root, .App {
   align-items: center;
   color: #0d1b3e;
   font-weight: 500;
-  background-color: rgba(26, 35, 126, 0.15); /* Slightly darker background */
+  background-color: rgba(26, 35, 126, 0.15);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   flex-shrink: 0;
@@ -102,7 +108,6 @@ html, body, #root, .App {
   font-size: 1.2rem;
 }
 
-/* Added extra margin to push menu items further from the brand */
 .navbar-nav {
   margin-left: 2rem;
 }
@@ -115,7 +120,8 @@ html, body, #root, .App {
   text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.5);
 }
 
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
   color: #d84315;
 }
 
@@ -123,21 +129,21 @@ html, body, #root, .App {
   border-radius: 0.25rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border: none;
-  background-color: #f0f6ff; /* Changed dropdown background from white */
+  background-color: #f0f6ff;
   z-index: 1031;
 }
 
 .dropdown-item:hover {
-  background-color: #e1ebff; /* Changed hover from #f1f5ff to slightly darker */
+  background-color: #e1ebff;
 }
 
-/* Create space below the navbar for content */
-main, .content {
+main,
+.content {
   margin-top: 80px;
-  background-color: #f9fbff; /* Added subtle background color instead of default white */
+  background-color: #f9fbff;
 }
 
-/* Override Bootstrap toggler icon color */
+
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2826, 35, 126, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -150,7 +156,7 @@ main, .content {
   box-shadow: 0 0 0 0.25rem rgba(26, 35, 126, 0.25);
 }
 
-/* Responsive styles */
+
 @media (max-width: 1199.98px) {
   .brand-text {
     font-size: 1.1rem;
@@ -162,24 +168,23 @@ main, .content {
     margin-top: 1rem;
     justify-content: center;
   }
-  
-  main, .content {
+
+  main,
+  .content {
     margin-top: 70px;
   }
-  
-  /* Ensure proper spacing on mobile */
+
   .brand-container {
     margin-right: 0;
     flex-wrap: nowrap;
     max-width: 80%;
   }
-  
+
   .navbar-nav {
     margin-left: 0;
     margin-top: 1rem;
   }
-  
-  /* Adjusted logo size for tablets */
+
   .rounded-logo {
     width: 45px;
     height: 45px;
@@ -190,13 +195,12 @@ main, .content {
   .brand-text {
     font-size: 1rem;
   }
-  
-  .navbar > .container-fluid {
+
+  .navbar>.container-fluid {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
-  
-  /* Keep logo relatively large on mobile */
+
   .rounded-logo {
     width: 40px;
     height: 40px;
@@ -207,33 +211,29 @@ main, .content {
   .brand-text {
     font-size: 0.9rem;
   }
-  
+
   .brand-container {
     max-width: 75%;
   }
-  
-  /* Still keeping logo substantial on smallest screens */
+
   .rounded-logo {
     width: 38px;
     height: 38px;
   }
-  
+
   .contact-number {
     font-size: 0.9rem;
   }
-  
+
   .contact-number i {
     font-size: 1rem;
   }
 }
 
-/* This is to prevent any other styling from pushing the navbar down */
 body::before {
   display: none !important;
 }
 
-/* Override any other fixed elements */
-body > *:first-child {
+body>*:first-child {
   margin-top: 0 !important;
 }
-

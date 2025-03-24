@@ -1,12 +1,9 @@
-/* ParkingBooking.css - Updated with unique class names */
-
-/* Search Results Page Styles - renamed to avoid conflicts */
 .parking-results-page {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   min-height: 100vh;
   padding: 2rem 0;
-  margin-top: 20px; /* Added space at the top to avoid overlap */
+  margin-top: 20px;
 }
 
 .parking-results-header {
@@ -14,17 +11,17 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  padding-top: 30px; /* Added padding to ensure no overlap with elements above */
+  padding-top: 30px;
 }
 
 .parking-results-title {
   margin: 0;
   color: #2c3e50;
   font-weight: 600;
-  font-size: 1.75rem; /* Adjusted size */
+  font-size: 1.75rem;
 }
 
-/* Filter and Sort Controls - added new styles */
+
 .parking-filter-container {
   background-color: #ffffff;
   border-radius: 8px;
@@ -33,7 +30,8 @@
   margin-bottom: 2rem;
 }
 
-.parking-filter-label, .parking-sort-label {
+.parking-filter-label,
+.parking-sort-label {
   display: block;
   margin-bottom: 0.75rem;
   font-weight: 500;
@@ -66,7 +64,7 @@
   background-color: #6c757d;
 }
 
-/* Parking Card Styles - renamed to avoid conflicts */
+
 .parking-spot-card {
   background-color: #ffffff;
   border-radius: 8px;
@@ -131,13 +129,13 @@
   font-size: 0.9rem;
 }
 
-/* Enhanced badge styles */
+
 .parking-spot-details .badge {
   padding: 0.5rem 0.6rem;
   font-weight: 500;
 }
 
-/* Rating and availability styles */
+
 .parking-spot-rating {
   display: flex;
   align-items: center;
@@ -149,7 +147,7 @@
   margin-right: 0.25rem;
 }
 
-/* Book now button enhancement */
+
 .parking-book-btn {
   font-weight: 500;
   padding: 0.6rem 1rem;
@@ -162,13 +160,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Loading spinner */
+
 .spinner-border {
   width: 3rem;
   height: 3rem;
 }
 
-/* No results styling */
+
 .parking-no-results {
   background-color: #ffffff;
   border-radius: 8px;
@@ -180,7 +178,7 @@
   color: #ced4da;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 992px) {
   .parking-filter-container {
     padding: 1.25rem;
@@ -192,21 +190,21 @@
     flex-direction: column;
     align-items: flex-start;
   }
-    
+
   .parking-results-header p {
     margin-top: 1rem;
   }
-  
+
   .parking-filter-container .row {
     flex-direction: column;
   }
-  
+
   .parking-sort-group {
     margin-top: 1rem;
   }
 }
 
-/* Preserve the existing styles for the booking form */
+
 .booking-container {
   max-width: 800px;
   margin: 0 auto;
@@ -214,7 +212,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header styling */
+
 .booking-header {
   margin-bottom: 2rem;
 }
@@ -224,4 +222,3 @@
   color: #2c3e50;
   font-weight: 600;
 }
-
