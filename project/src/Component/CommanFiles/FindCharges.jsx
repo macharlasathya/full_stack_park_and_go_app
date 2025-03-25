@@ -1,116 +1,161 @@
 
-import React from "react";
-import "./FindCharges.css";
 
-const FindCharges = () => {
-  const charges = [
-    {
-      location: "Gachibowli",
-      vehicles: [
-        { type: "Bike", size: "Small", hourly: "₹20", daily: "₹100" },
-        { type: "Car", size: "Medium", hourly: "₹50", daily: "₹300" },
-      ],
-    },
-    {
-      location: "Madhapur",
-      vehicles: [
-        { type: "Bike", size: "Medium", hourly: "₹25", daily: "₹120" },
-        { type: "Car", size: "Large", hourly: "₹60", daily: "₹350" },
-      ],
-    },
-    {
-      location: "Kukatpally",
-      vehicles: [
-        { type: "Bike", size: "Small", hourly: "₹18", daily: "₹90" },
-        { type: "Car", size: "Large", hourly: "₹55", daily: "₹320" },
-      ],
-    },
-    {
-      location: "Hitech City",
-      vehicles: [
-        { type: "Bike", size: "Large", hourly: "₹30", daily: "₹150" },
-        { type: "Car", size: "Medium", hourly: "₹70", daily: "₹400" },
-      ],
-    },
-    {
-      location: "Begumpet",
-      vehicles: [
-        { type: "Bike", size: "Medium", hourly: "₹22", daily: "₹110" },
-        { type: "Car", size: "Small", hourly: "₹45", daily: "₹280" },
-      ],
-    },
-    {
-      location: "Secunderabad Railway Parking",
-      vehicles: [
-        { type: "Bike", size: "Small", hourly: "₹15", daily: "₹80" },
-        { type: "Car", size: "Medium", hourly: "₹40", daily: "₹250" },
-      ],
-    },
-    {
-      location: "Miyapur Park & Ride",
-      vehicles: [
-        { type: "Bike", size: "Medium", hourly: "₹20", daily: "₹100" },
-        { type: "Car", size: "Large", hourly: "₹50", daily: "₹300" },
-      ],
-    },
-    {
-      location: "Kondapur Central Parking",
-      vehicles: [
-        { type: "Bike", size: "Small", hourly: "₹22", daily: "₹110" },
-        { type: "Car", size: "Medium", hourly: "₹55", daily: "₹320" },
-      ],
-    },
-    {
-      location: "Ameerpet Metro Parking",
-      vehicles: [
-        { type: "Bike", size: "Medium", hourly: "₹18", daily: "₹90" },
-        { type: "Car", size: "Small", hourly: "₹45", daily: "₹280" },
-      ],
-    },
-    {
-      location: "Jubilee Hills Premium Parking",
-      vehicles: [
-        { type: "Bike", size: "Large", hourly: "₹25", daily: "₹130" },
-        { type: "Car", size: "Large", hourly: "₹65", daily: "₹380" },
-      ],
-    },
-  ];
+import React, { useState, useEffect, useRef } from 'react';
+import './CustomerDetails.css';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { useParams, useSearchParams } from 'react-router-dom';
+
+
+const CustomerDetails = () => {
+
 
   return (
-    <div className="page-content">
-      <div className="charges-container">
-        <h2>Parking Charges in Hyderabad</h2>
-        <div className="table-responsive">
-          <table className="charges-table">
-            <thead>
-              <tr>
-                <th>Location</th>
-                <th>Vehicle Type</th>
-                <th>Size</th>
-                <th>Hourly Rate</th>
-                <th>Daily Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              {charges.map((place) => (
-                place.vehicles.map((vehicle, idx) => (
-                  <tr key={`${place.location}-${idx}`}>
-                    {idx === 0 && (
-                      <td rowSpan={place.vehicles.length}>{place.location}</td>
-                    )}
-                    <td>{vehicle.type}</td>
-                    <td>{vehicle.size}</td>
-                    <td>{vehicle.hourly}</td>
-                    <td>{vehicle.daily}</td>
-                  </tr>
-                ))
-              ))}
-            </tbody>
-          </table>
+    <div className="parking-container">
+      <div className="parking-wrapper">
+
+        <div className="parking-header">
+          <div className="parking-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+            <h1>Vehicle Parking Registration</h1>
+          </div>
+
+          {formData.locationName && (
+            <div className="parking-location-info">
+              <p><strong>Location:</strong> {formData.locationName}</p>
+              {formData.address && <p><strong>Address:</strong> {formData.address}</p>}
+            </div>
+          )}
+        </div>
+
+        {errorMessage && <div className="parking-error-message">{errorMessage}</div>}
+
+
+        <div className="parking-grid">
+
+          <div className="parking-column customer-details">
+            <div className="parking-card">
+              <h2>Customer Details</h2>
+
+
+              <form onSubmit={handleSubmit} className="parking-form">
+
+                <div className="form-group">
+                  <label htmlFor="name">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+
+                <div className="form-group">
+                  <label htmlFor="mobileNumber">Mobile Number</label>
+                  <input
+                    type="tel"
+                    id="mobileNumber"
+                    name="mobileNumber"
+                    value={formData.mobileNumber}
+                    onChange={handleChange}
+                    pattern="[0-9]{10}"
+                    required
+                    placeholder="10-digit mobile number"
+                  />
+                </div>
+
+
+                <div className="form-group">
+                  <label htmlFor="vehicleNumber">Vehicle Number</label>
+                  <input
+                    type="text"
+                    id="vehicleNumber"
+                    name="vehicleNumber"
+                    value={formData.vehicleNumber}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter vehicle registration number"
+                  />
+                </div>
+
+
+                <div className="time-picker-container">
+
+                </div>
+
+                <div className="price-info">
+
+                </div>
+
+
+                <button
+                  type="submit"
+                  className="register-button"
+                  disabled={isSubmitting || formData.paymentStatus !== 'Completed'}
+                >
+                  {isSubmitting ? 'Processing...' : 'Register Vehicle'}
+                </button>
+              </form>
+            </div>
+          </div>
+
+
+          <div className="parking-column location-payment">
+            <div className="parking-card map-section">
+              <h2>Parking Location</h2>
+              <div ref={mapContainerRef} className="map-container"></div>
+              <p className="coordinates-info">
+                Coordinates: {formData.location.lat.toFixed(6)}, {formData.location.lng.toFixed(6)}
+              </p>
+            </div>
+
+            <div className="parking-card payment-section">
+              <h2>Payment Information</h2>
+              <div className="qr-section">
+                <h3>Scan to Pay</h3>
+                <div className="qr-container">
+                  {qrCodeUrl ? (
+                    <img
+                      src={qrCodeUrl}
+                      alt="Payment QR Code"
+                      className="qr-code"
+                    />
+                  ) : (
+                    <div className="qr-placeholder">QR code will appear here</div>
+                  )}
+                </div>
+
+                {!paymentSuccess && (
+                  <button
+                    type="button"
+                    onClick={initiatePaymentVerification}
+                    disabled={isSubmitting}
+                    className="verify-button"
+                  >
+                    {isSubmitting ? 'Processing...' : 'Verify Payment'}
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+
+      {showVerificationModal && (
+        <div className="verification-modal-overlay">
+
+        </div>
+      )}
     </div>
   );
 };
 
-export default FindCharges;
+export default CustomerDetails;

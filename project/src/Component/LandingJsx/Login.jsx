@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LandingCss/Login.css';
-import { loginUser } from '../../App'; 
+import { useAuth } from '../../AuthContext'; 
+import { loginUser } from '../../App';
 
 const LoginForm = () => {
     const navigate = useNavigate();
+    const { login } = useAuth(); 
     const [error, setError] = useState('');
     
     const onFinish = async (e) => {
@@ -14,7 +16,6 @@ const LoginForm = () => {
         const values = Object.fromEntries(formData.entries());
         
         try {
-           
             const userData = {
                 email: values.email, 
                 password: values.password
@@ -22,12 +23,13 @@ const LoginForm = () => {
             
             const response = await loginUser(userData);
             
-          
-            localStorage.setItem('authToken', response.token);
-            localStorage.setItem('userId', response.user.id);
-            
-            
-            navigate('/app');
+            if (response.token) {
+                login(response.token); 
+                localStorage.setItem('userId', response.user.id);
+                navigate('/app');
+            } else {
+                setError('Invalid credentials. Please try again.');
+            }
         } catch (error) {
             setError('Invalid credentials. Please try again.');
         }

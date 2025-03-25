@@ -19,32 +19,32 @@ const Footer = () => {
             <ul className="footer_list list-unstyled">
               <li className="footer_list_item">
                 <a href="/" className="footer_link">
-                  <i className="bi bi-geo-alt footer_location_icon"></i> HYDERABAD, TELANGANA
+                  <i className="bi bi-geo-alt footer_location_icon"></i> GACHIBOWLI PARKING COMPLEX 
                 </a>
               </li>
               <li className="footer_list_item">
                 <a href="/" className="footer_link">
-                  <i className="bi bi-geo-alt footer_location_icon"></i> BANGALORE, KARNATAKA
+                  <i className="bi bi-geo-alt footer_location_icon"></i> HITECHCITY PARKING ZONE 
                 </a>
               </li>
               <li className="footer_list_item">
                 <a href="/" className="footer_link">
-                  <i className="bi bi-geo-alt footer_location_icon"></i> CHENNAI, TAMILNADU
+                  <i className="bi bi-geo-alt footer_location_icon"></i> MADHAPUR PUBLIC PARKING 
                 </a>
               </li>
               <li className="footer_list_item">
                 <a href="/" className="footer_link">
-                  <i className="bi bi-geo-alt footer_location_icon"></i> MUMBAI, MAHARASHTRA
+                  <i className="bi bi-geo-alt footer_location_icon"></i> KUKATPALLY PARKING HUB 
                 </a>
               </li>
               <li className="footer_list_item">
                 <a href="/" className="footer_link">
-                  <i className="bi bi-geo-alt footer_location_icon"></i> THIRUVANANTHAPURAM, KERALA
+                  <i className="bi bi-geo-alt footer_location_icon"></i>BEGUMPET SECURE PARKING 
                 </a>
               </li>
               <li className="footer_list_item">
                 <a href="/" className="footer_link">
-                  <i className="bi bi-geo-alt footer_location_icon"></i> GANDHINAGAR, GUJARAT
+                  <i className="bi bi-geo-alt footer_location_icon"></i>JUBILEE HILLS PREMIUM PARKING  
                 </a>
               </li>
             </ul>

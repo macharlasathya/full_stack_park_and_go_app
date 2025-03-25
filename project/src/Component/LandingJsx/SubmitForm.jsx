@@ -3,7 +3,15 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "../LandingCss/SubmitForm.css";
-import { submitRequest } from "../../App";
+
+
+const submitRequest = async (requestData) => {
+  console.warn('Using mock submitRequest. Replace with actual API call');
+  return { 
+    message: 'Request submitted successfully (Mock Response)',
+    data: requestData 
+  };
+};
 
 const SubmitForm = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +26,6 @@ const SubmitForm = () => {
   const [errors, setErrors] = useState({});
   const [userId, setUserId] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -60,7 +67,6 @@ const SubmitForm = () => {
     setIsSubmitting(true);
 
     try {
-
       const requestData = {
         name: formData.name,
         email: formData.email,
@@ -72,13 +78,12 @@ const SubmitForm = () => {
 
       console.log("Sending data:", requestData);
 
-
       const data = await submitRequest(requestData);
 
       console.log("Request Response:", data);
       alert(data.message || "Request submitted successfully!");
 
-
+  
       setFormData({
         name: "",
         email: "",
@@ -90,110 +95,34 @@ const SubmitForm = () => {
       setErrors({});
     } catch (error) {
       console.error("Error submitting request:", error);
-
+      alert('Failed to submit request. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="SubmitForm">
-      <div className="ps-form-outer-wrapper">
-        <div className="ps-form-inner-container">
-          <div className="ps-form-card">
-            <h2 className="ps-form-heading">Submit Your Details</h2>
-            <form onSubmit={handleSubmit} className="ps-form">
-              <div className="form-group mb-3">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-                {errors.name && <div className="text-danger">{errors.name}</div>}
-              </div>
-
-              <div className="form-group mb-3">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                {errors.email && <div className="text-danger">{errors.email}</div>}
-              </div>
-
-              <div className="form-group mb-3">
-                <label htmlFor="contact">Contact Number</label>
-                <input
-                  type="tel"
-                  className="form-control"
-                  id="contact"
-                  name="contact"
-                  value={formData.contact}
-                  onChange={handleChange}
-                />
-                {errors.contact && <div className="text-danger">{errors.contact}</div>}
-              </div>
-
-              <div className="form-group mb-3">
-                <label htmlFor="address">Address</label>
-                <textarea
-                  className="form-control"
-                  id="address"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  rows="2"
-                ></textarea>
-                {errors.address && <div className="text-danger">{errors.address}</div>}
-              </div>
-
-              <div className="form-group mb-3">
-                <label htmlFor="requestDetails">Request Details</label>
-                <textarea
-                  className="form-control"
-                  id="requestDetails"
-                  name="requestDetails"
-                  value={formData.requestDetails}
-                  onChange={handleChange}
-                  rows="3"
-                ></textarea>
-                {errors.requestDetails && <div className="text-danger">{errors.requestDetails}</div>}
-              </div>
-
-              <div className="form-group mb-3">
-                <label htmlFor="location">Location</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="location"
-                  name="location"
-                  value={formData.location}
-                  onChange={handleChange}
-                />
-                {errors.location && <div className="text-danger">{errors.location}</div>}
-              </div>
-
-              <button
-                type="submit"
-                className="ps-submit-button btn btn-primary"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    
+  <div className="submit-form-container">
+  <form onSubmit={handleSubmit}>
+    
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Name"
+    />
+    {errors.name && <span className="error">{errors.name}</span>}
+    
+    
+    
+    <button type="submit" disabled={isSubmitting}>
+      {isSubmitting ? 'Submitting...' : 'Submit Request'}
+    </button>
+  </form>
+</div>
+);
 };
 
 export default SubmitForm;

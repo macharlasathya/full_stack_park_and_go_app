@@ -11,7 +11,7 @@ const Navbar = () => {
 
         <a className="navbar-brand d-flex align-items-center" href="#">
           <img src={AppLog} alt="Logo" className="navbar-logo" />
-          <span className="navbar-title">ParkNGo – Find, book, and park effortlessly</span>
+          <span className="navbar-title">ParkNGo – Easy Parking Solutions</span>
         </a>
 
 
@@ -45,12 +45,6 @@ const Navbar = () => {
               <a className="nav-link" href="#FAQsection">FAQ</a>
             </li>
           </ul>
-
-
-          <div className="navbar-right d-flex align-items-center">
-            <span className="navbar-phone">+91 9392499936</span>
-            <button className="btn btn-primary navbar-login">Login</button>
-          </div>
         </div>
       </div>
     </nav>
