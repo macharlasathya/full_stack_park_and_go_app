@@ -1,62 +1,54 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Outer Wrapper */
 .ps-form-outer-wrapper {
-  position: static;
-  padding: 80px 0 60px;
-  margin-top: 60px;
-  background-color: #f4f7fc;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f7fc;
+  padding: 40px 15px;
+  position: relative;
   z-index: 1;
 }
 
-
-.ps-form-outer-wrapper::before {
-  content: '';
-  display: block;
-  height: 40px;
-  position: absolute;
-  top: -40px;
-  width: 100%;
-}
-
-
+/* Inner Container */
 .ps-form-inner-container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  justify-content: center;
 }
 
-
+/* Form Card */
 .ps-form-card {
-  width: 100%;
-  max-width: 500px;
   background: white;
   border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 40px;
+  width: 100%;
 }
 
-
+/* Form Heading */
 .ps-form-heading {
   color: #007bff;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   font-size: 24px;
 }
 
-
-.ps-form {
-  width: 100%;
-}
-
+/* Form Groups */
 .ps-form-group {
   margin-bottom: 20px;
-  width: 100%;
 }
 
-
+/* Labels */
 .ps-form-label {
   display: block;
   margin-bottom: 8px;
@@ -65,7 +57,7 @@
   font-size: 16px;
 }
 
-
+/* Inputs and Textareas */
 .ps-form-input,
 .ps-form-textarea {
   width: 100%;
@@ -83,7 +75,7 @@
   outline: none;
 }
 
-
+/* Error Styles */
 .ps-input-error {
   border-color: #dc3545;
 }
@@ -92,14 +84,13 @@
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
 }
 
-
 .ps-error-message {
   color: #dc3545;
   font-size: 14px;
   margin-top: 6px;
 }
 
-
+/* Submit Button */
 .ps-submit-button {
   display: block;
   width: 100%;
@@ -123,15 +114,19 @@
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
 }
 
+.ps-submit-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .ps-form-card {
-    padding: 25px;
-    max-width: 100%;
+    padding: 30px;
   }
 
-  .ps-form-outer-wrapper {
-    padding: 60px 0 40px;
+  .ps-form-heading {
+    font-size: 22px;
   }
 }
 
@@ -141,7 +136,7 @@
   }
 
   .ps-form-heading {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 

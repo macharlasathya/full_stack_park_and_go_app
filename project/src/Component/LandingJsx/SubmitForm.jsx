@@ -1,15 +1,12 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
 import "../LandingCss/SubmitForm.css";
-
 
 const submitRequest = async (requestData) => {
   console.warn('Using mock submitRequest. Replace with actual API call');
-  return { 
+  return {
     message: 'Request submitted successfully (Mock Response)',
-    data: requestData 
+    data: requestData
   };
 };
 
@@ -24,32 +21,33 @@ const SubmitForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [userId, setUserId] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user._id) {
-      setUserId(user._id);
-    }
-  }, []);
-
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const validateForm = () => {
-    let newErrors = {};
-    if (!formData.name) newErrors.name = "Name is required";
-    if (!formData.email) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email))
+    const newErrors = {};
+    
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Invalid email format";
-    if (!formData.contact) newErrors.contact = "Contact is required";
-    else if (!/^\d{10}$/.test(formData.contact))
+    }
+    
+    if (!formData.contact.trim()) {
+      newErrors.contact = "Contact is required";
+    } else if (!/^\d{10}$/.test(formData.contact)) {
       newErrors.contact = "Invalid contact number (10 digits required)";
-    if (!formData.address) newErrors.address = "Address is required";
-    if (!formData.requestDetails) newErrors.requestDetails = "Request details are required";
-    if (!formData.location) newErrors.location = "Location is required";
+    }
+    
+    if (!formData.address.trim()) newErrors.address = "Address is required";
+    if (!formData.requestDetails.trim()) newErrors.requestDetails = "Request details are required";
+    if (!formData.location.trim()) newErrors.location = "Location is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -57,10 +55,8 @@ const SubmitForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submission attempted");
 
     if (!validateForm()) {
-      console.log("Form validation failed", errors);
       return;
     }
 
@@ -68,22 +64,20 @@ const SubmitForm = () => {
 
     try {
       const requestData = {
-        name: formData.name,
-        email: formData.email,
-        contactNumber: formData.contact,
-        address: formData.address,
-        requestDetails: formData.requestDetails,
-        location: formData.location
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        contactNumber: formData.contact.trim(),
+        address: formData.address.trim(),
+        requestDetails: formData.requestDetails.trim(),
+        location: formData.location.trim()
       };
 
-      console.log("Sending data:", requestData);
-
       const data = await submitRequest(requestData);
-
-      console.log("Request Response:", data);
+      
+      // Use more modern alert method
       alert(data.message || "Request submitted successfully!");
 
-  
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -102,27 +96,117 @@ const SubmitForm = () => {
   };
 
   return (
-    
-  <div className="submit-form-container">
-  <form onSubmit={handleSubmit}>
-    
-    <input
-      type="text"
-      name="name"
-      value={formData.name}
-      onChange={handleChange}
-      placeholder="Name"
-    />
-    {errors.name && <span className="error">{errors.name}</span>}
-    
-    
-    
-    <button type="submit" disabled={isSubmitting}>
-      {isSubmitting ? 'Submitting...' : 'Submit Request'}
-    </button>
-  </form>
-</div>
-);
+    <div className="ps-form-outer-wrapper">
+      <div className="ps-form-inner-container">
+        <div className="ps-form-card">
+          <form onSubmit={handleSubmit} className="ps-form">
+            <h2 className="ps-form-heading">Submit Parking Spot Request</h2>
+            
+            {/* Form Fields */}
+            <div className="ps-form-group">
+              <label htmlFor="name" className="ps-form-label">Name</label>
+              <input
+                id="name"
+                type="text"
+                className={`ps-form-input ${errors.name ? 'ps-input-error' : ''}`}
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+              />
+              {errors.name && <div className="ps-error-message">{errors.name}</div>}
+            </div>
+
+            {/* Email Field */}
+            <div className="ps-form-group">
+              <label htmlFor="email" className="ps-form-label">Email</label>
+              <input
+                id="email"
+                type="email"
+                className={`ps-form-input ${errors.email ? 'ps-input-error' : ''}`}
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+              />
+              {errors.email && <div className="ps-error-message">{errors.email}</div>}
+            </div>
+
+            {/* Contact Field */}
+            <div className="ps-form-group">
+              <label htmlFor="contact" className="ps-form-label">Contact Number</label>
+              <input
+                id="contact"
+                type="tel"
+                className={`ps-form-input ${errors.contact ? 'ps-input-error' : ''}`}
+                name="contact"
+                value={formData.contact}
+                onChange={handleChange}
+                placeholder="Enter 10-digit contact number"
+              />
+              {errors.contact && <div className="ps-error-message">{errors.contact}</div>}
+            </div>
+
+            {/* Address Field */}
+            <div className="ps-form-group">
+              <label htmlFor="address" className="ps-form-label">Address</label>
+              <input
+                id="address"
+                type="text"
+                className={`ps-form-input ${errors.address ? 'ps-input-error' : ''}`}
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                placeholder="Enter your address"
+              />
+              {errors.address && <div className="ps-error-message">{errors.address}</div>}
+            </div>
+
+            {/* Location Field */}
+            <div className="ps-form-group">
+              <label htmlFor="location" className="ps-form-label">Location</label>
+              <input
+                id="location"
+                type="text"
+                className={`ps-form-input ${errors.location ? 'ps-input-error' : ''}`}
+                name="location"
+                value={formData.location}
+                onChange={handleChange}
+                placeholder="Enter parking spot location"
+              />
+              {errors.location && <div className="ps-error-message">{errors.location}</div>}
+            </div>
+
+            {/* Request Details Field */}
+            <div className="ps-form-group">
+              <label htmlFor="requestDetails" className="ps-form-label">Request Details</label>
+              <textarea
+                id="requestDetails"
+                className={`ps-form-textarea ${errors.requestDetails ? 'ps-input-error' : ''}`}
+                name="requestDetails"
+                value={formData.requestDetails}
+                onChange={handleChange}
+                placeholder="Provide additional details about your parking request"
+                rows="3"
+              />
+              {errors.requestDetails && <div className="ps-error-message">{errors.requestDetails}</div>}
+            </div>
+
+            {/* Submit Button */}
+            <div className="ps-form-group">
+              <button 
+                type="submit" 
+                className="ps-submit-button" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Request'}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default SubmitForm;
