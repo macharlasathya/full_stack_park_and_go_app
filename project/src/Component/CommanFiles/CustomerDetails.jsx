@@ -5,9 +5,9 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './CustomerDetails.css';
 
-// Mock submit booking function (replace with actual API call)
+
 const submitBooking = async (bookingData) => {
-  // Simulating an API call
+
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log('Booking submitted:', bookingData);
@@ -16,7 +16,6 @@ const submitBooking = async (bookingData) => {
   });
 };
 
-// Leaflet icon configuration
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -64,7 +63,7 @@ const CustomerDetails = () => {
   const mapContainerRef = useRef(null);
   const markerRef = useRef(null);
 
-  // Duration and total amount calculation
+ 
   useEffect(() => {
     const calculateTotal = () => {
       const inTime = new Date(formData.inTime);
@@ -79,7 +78,7 @@ const CustomerDetails = () => {
     calculateTotal();
   }, [formData.inTime, formData.outTime, basePrice]);
 
-  // Map initialization
+ 
   useEffect(() => {
     if (mapContainerRef.current && !mapRef.current) {
       mapRef.current = L.map(mapContainerRef.current).setView(
@@ -106,7 +105,7 @@ const CustomerDetails = () => {
     };
   }, [formData.location.lat, formData.location.lng, formData.locationName]);
 
-  // QR Code Generation
+  
   useEffect(() => {
     if (formData.vehicleNumber) {
       const referenceCode = formData.orderNumber + '-' + Date.now().toString().substring(7);
@@ -117,13 +116,13 @@ const CustomerDetails = () => {
     }
   }, [formData.orderNumber, formData.vehicleNumber, totalAmount]);
 
-  // Form change handler
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // Payment verification initiation
+  
   const initiatePaymentVerification = () => {
     if (!formData.vehicleNumber || !formData.name || !formData.mobileNumber) {
       setErrorMessage('Please fill in all required fields before proceeding with payment');
@@ -142,7 +141,7 @@ const CustomerDetails = () => {
     }, 1500);
   };
 
-  // Payment verification
+ 
   const verifyPayment = (e) => {
     e.preventDefault();
     const enteredCode = e.target.elements.verificationCode.value;
@@ -171,7 +170,7 @@ const CustomerDetails = () => {
     }
   };
 
-  // Form submission
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);

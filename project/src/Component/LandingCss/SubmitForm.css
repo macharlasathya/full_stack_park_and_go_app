@@ -1,11 +1,11 @@
-/* Reset and Base Styles */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Form Outer Wrapper */
+
 .ps-form-outer-wrapper {
   width: 100%;
   min-height: 100vh;
@@ -13,28 +13,31 @@
   align-items: center;
   justify-content: center;
   background-color: #f4f7fc;
-  padding: 40px 15px;
+  padding: 100px 15px 40px; 
   position: relative;
   z-index: 1;
 }
 
-/* Inner Container */
+
 .ps-form-inner-container {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; 
 }
 
-/* Form Card */
+
 .ps-form-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 40px;
   width: 100%;
+  position: relative; 
 }
 
-/* Form Heading */
+
 .ps-form-heading {
   color: #007bff;
   font-weight: 600;
@@ -43,12 +46,10 @@
   font-size: 24px;
 }
 
-/* Form Groups */
 .ps-form-group {
   margin-bottom: 20px;
 }
 
-/* Labels */
 .ps-form-label {
   display: block;
   margin-bottom: 8px;
@@ -57,9 +58,7 @@
   font-size: 16px;
 }
 
-/* Inputs and Textareas */
-.ps-form-input,
-.ps-form-textarea {
+.ps-form-input, .ps-form-textarea {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #ced4da;
@@ -68,14 +67,12 @@
   transition: all 0.3s ease;
 }
 
-.ps-form-input:focus,
-.ps-form-textarea:focus {
+.ps-form-input:focus, .ps-form-textarea:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
   outline: none;
 }
 
-/* Error Styles */
 .ps-input-error {
   border-color: #dc3545;
 }
@@ -90,7 +87,6 @@
   margin-top: 6px;
 }
 
-/* Submit Button */
 .ps-submit-button {
   display: block;
   width: 100%;
@@ -119,7 +115,7 @@
   cursor: not-allowed;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
   .ps-form-card {
     padding: 30px;

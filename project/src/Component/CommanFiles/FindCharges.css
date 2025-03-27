@@ -1,4 +1,3 @@
-/* Parking Locations Component Styling */
 
 .vehicle-selector {
   display: flex;
@@ -8,48 +7,48 @@
 
 .vehicle-card {
   width: 120px;
-  cursor: pointer; /* Explicitly set cursor to pointer */
+  cursor: pointer; 
   border: 2px solid #e0e0e0;
   transition: all 0.3s ease;
   border-radius: 8px;
-  user-select: none; /* Prevent text selection */
+  user-select: none; 
 }
 
 .vehicle-card:hover {
-  cursor: pointer; /* Ensure cursor changes on hover */
+  cursor: pointer; 
   border-color: #007bff;
   box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
 }
 
 .vehicle-card.selected {
   border-color: #007bff;
-  background-color: rgba(0, 123, 255, 0.2); /* Slightly darker selected state */
-  cursor: pointer; /* Ensure cursor remains a pointer */
+  background-color: rgba(0, 123, 255, 0.2); 
+  cursor: pointer; 
 }
 
 .vehicle-card .card-body {
   padding: 15px;
   text-align: center;
-  cursor: pointer; /* Ensure cursor is a pointer on card body */
+  cursor: pointer; 
 }
 
 .vehicle-card span {
-  cursor: pointer; /* Ensure cursor is a pointer on text */
+  cursor: pointer; 
   font-weight: 500;
   color: #333;
 }
 
 .vehicle-card.selected span {
-  color: #007bff; /* Highlight text color when selected */
+  color: #007bff; 
 }
 
-/* Additional hover effect */
+
 .vehicle-card:active {
-  transform: scale(0.95); /* Slight press effect */
+  transform: scale(0.95); 
   transition: transform 0.1s ease;
 }
 
-/* Rest of the previous CSS remains the same */
+
 .table {
   margin-top: 20px;
 }
@@ -76,13 +75,13 @@
   background-color: rgba(0, 123, 255, 0.1);
 }
 
-/* Search Input Styling */
+
 .form-control {
   border-radius: 5px;
   padding: 10px;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
   .vehicle-selector {
     flex-direction: column;
@@ -104,7 +103,7 @@
   }
 }
 
-/* Additional Responsive Typography */
+
 @media (max-width: 576px) {
   h2 {
     font-size: 1.5rem;

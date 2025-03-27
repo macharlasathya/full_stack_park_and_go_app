@@ -61,12 +61,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  max-height: 3em; /* Approximately 2 lines */
+  max-height: 3em; 
   line-height: 1.5em;
   margin-bottom: 1rem;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .parking-spot-image {
     height: 250px;

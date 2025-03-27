@@ -30,21 +30,21 @@ const SubmitForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
-    
+
     if (!formData.contact.trim()) {
       newErrors.contact = "Contact is required";
     } else if (!/^\d{10}$/.test(formData.contact)) {
       newErrors.contact = "Invalid contact number (10 digits required)";
     }
-    
+
     if (!formData.address.trim()) newErrors.address = "Address is required";
     if (!formData.requestDetails.trim()) newErrors.requestDetails = "Request details are required";
     if (!formData.location.trim()) newErrors.location = "Location is required";
@@ -73,11 +73,10 @@ const SubmitForm = () => {
       };
 
       const data = await submitRequest(requestData);
-      
-      // Use more modern alert method
+
+
       alert(data.message || "Request submitted successfully!");
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -101,8 +100,8 @@ const SubmitForm = () => {
         <div className="ps-form-card">
           <form onSubmit={handleSubmit} className="ps-form">
             <h2 className="ps-form-heading">Submit Parking Spot Request</h2>
-            
-            {/* Form Fields */}
+
+
             <div className="ps-form-group">
               <label htmlFor="name" className="ps-form-label">Name</label>
               <input
@@ -117,7 +116,7 @@ const SubmitForm = () => {
               {errors.name && <div className="ps-error-message">{errors.name}</div>}
             </div>
 
-            {/* Email Field */}
+
             <div className="ps-form-group">
               <label htmlFor="email" className="ps-form-label">Email</label>
               <input
@@ -132,7 +131,7 @@ const SubmitForm = () => {
               {errors.email && <div className="ps-error-message">{errors.email}</div>}
             </div>
 
-            {/* Contact Field */}
+
             <div className="ps-form-group">
               <label htmlFor="contact" className="ps-form-label">Contact Number</label>
               <input
@@ -147,7 +146,7 @@ const SubmitForm = () => {
               {errors.contact && <div className="ps-error-message">{errors.contact}</div>}
             </div>
 
-            {/* Address Field */}
+
             <div className="ps-form-group">
               <label htmlFor="address" className="ps-form-label">Address</label>
               <input
@@ -162,7 +161,7 @@ const SubmitForm = () => {
               {errors.address && <div className="ps-error-message">{errors.address}</div>}
             </div>
 
-            {/* Location Field */}
+
             <div className="ps-form-group">
               <label htmlFor="location" className="ps-form-label">Location</label>
               <input
@@ -177,7 +176,7 @@ const SubmitForm = () => {
               {errors.location && <div className="ps-error-message">{errors.location}</div>}
             </div>
 
-            {/* Request Details Field */}
+
             <div className="ps-form-group">
               <label htmlFor="requestDetails" className="ps-form-label">Request Details</label>
               <textarea
@@ -192,11 +191,11 @@ const SubmitForm = () => {
               {errors.requestDetails && <div className="ps-error-message">{errors.requestDetails}</div>}
             </div>
 
-            {/* Submit Button */}
+
             <div className="ps-form-group">
-              <button 
-                type="submit" 
-                className="ps-submit-button" 
+              <button
+                type="submit"
+                className="ps-submit-button"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Request'}

@@ -1,4 +1,4 @@
-/* Global Styles */
+
 :root {
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
@@ -16,7 +16,7 @@
   border-radius: 8px;
 }
 
-/* Header Styles */
+
 .parking-header {
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
   font-size: 1.2rem;
 }
 
-/* Error Message */
+
 .parking-error-message {
   background-color: #ffdddd;
   color: #ff0000;
@@ -66,7 +66,7 @@
   text-align: center;
 }
 
-/* Form Styles */
+
 .parking-form {
   width: 100%;
 }
@@ -108,7 +108,7 @@
   flex: 1;
 }
 
-/* Price Information */
+
 .price-info {
   background-color: var(--background-color);
   padding: 15px;
@@ -128,7 +128,7 @@
   padding-top: 8px;
 }
 
-/* Map Section */
+
 .map-container {
   height: 300px;
   width: 100%;
@@ -150,7 +150,7 @@
   text-align: center;
 }
 
-/* Payment Section */
+
 .payment-section {
   text-align: center;
 }
@@ -173,7 +173,7 @@
   border-radius: 8px;
 }
 
-/* Buttons */
+
 .register-button,
 .verify-button {
   width: 100%;
@@ -198,7 +198,7 @@
   background-color: #2980b9;
 }
 
-/* Verification Modal */
+
 .verification-modal-overlay {
   position: fixed;
   top: 0;
@@ -258,7 +258,7 @@
   color: white;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .parking-content {
     flex-direction: column;
