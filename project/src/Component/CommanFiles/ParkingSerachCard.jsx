@@ -88,7 +88,7 @@ const ParkingSearchCard = () => {
                   <input
                     type="text"
                     className="search-input"
-                    placeholder="Enter location"
+                    placeholder="Enter location (Example: Kukatpally)"
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                   />

@@ -1,83 +1,57 @@
-/* Global Styles */
-body {
-  background-color: #f4f4f4;
-  font-family: 'Arial', sans-serif;
-}
+/* Parking Locations Component Styling */
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-/* Header Styling */
-h2 {
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Search and Filter Section */
-.mb-3 {
+.vehicle-selector {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
-/* Search Input */
-.form-control {
+.vehicle-card {
+  width: 120px;
+  cursor: pointer; /* Explicitly set cursor to pointer */
   border: 2px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 10px;
   transition: all 0.3s ease;
-}
-
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-/* Button Group */
-.btn-group {
-  display: flex;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.btn-group .btn {
-  padding: 10px 20px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline-primary {
-  background-color: white;
-  color: #007bff;
-  border: 1px solid #007bff;
-}
-
-.btn-primary:hover,
-.btn-outline-primary:hover {
-  opacity: 0.9;
-}
-
-/* Table Styling */
-.table {
-  background-color: white;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  user-select: none; /* Prevent text selection */
+}
+
+.vehicle-card:hover {
+  cursor: pointer; /* Ensure cursor changes on hover */
+  border-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+}
+
+.vehicle-card.selected {
+  border-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.2); /* Slightly darker selected state */
+  cursor: pointer; /* Ensure cursor remains a pointer */
+}
+
+.vehicle-card .card-body {
+  padding: 15px;
+  text-align: center;
+  cursor: pointer; /* Ensure cursor is a pointer on card body */
+}
+
+.vehicle-card span {
+  cursor: pointer; /* Ensure cursor is a pointer on text */
+  font-weight: 500;
+  color: #333;
+}
+
+.vehicle-card.selected span {
+  color: #007bff; /* Highlight text color when selected */
+}
+
+/* Additional hover effect */
+.vehicle-card:active {
+  transform: scale(0.95); /* Slight press effect */
+  transition: transform 0.1s ease;
+}
+
+/* Rest of the previous CSS remains the same */
+.table {
+  margin-top: 20px;
 }
 
 .table thead {
@@ -85,51 +59,58 @@ h2 {
 }
 
 .table thead th {
-  color: #495057;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 2px solid #dee2e6;
-}
-
-.table tbody tr {
-  transition: background-color 0.3s ease;
-}
-
-.table tbody tr:hover {
-  background-color: #f1f3f5;
-}
-
-.table td {
+  color: #333;
   vertical-align: middle;
-  padding: 12px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .mb-3 {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .form-control {
-    width: 100% !important;
-  }
-
-  .btn-group {
-    width: 100%;
-  }
-
-  .btn-group .btn {
-    flex-grow: 1;
-  }
+.table tbody td {
+  vertical-align: middle;
 }
 
-/* Color Scheme */
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 123, 255, 0.05);
 }
 
 .table-hover tbody tr:hover {
   background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Search Input Styling */
+.form-control {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .vehicle-selector {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .vehicle-card {
+    width: 100%;
+  }
+
+  .form-control {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Additional Responsive Typography */
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
 }
