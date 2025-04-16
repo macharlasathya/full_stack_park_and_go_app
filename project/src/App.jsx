@@ -18,8 +18,8 @@ import ParkingBooking from "./Component/CommanFiles/ParkingBooking";
 import CustomerDetails from "./Component/CommanFiles/CustomerDetails";
 import Login from "./Component/LandingJsx/Login";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/auth";
-const BOOKING_API_URL = import.meta.env.VITE_BOOKING_API_URL || "http://localhost:5000/api/bookings";
+const API_URL = import.meta.env.VITE_API_URL || "https://full-stack-park-and-go-app.vercel.app/api/auth";
+const BOOKING_API_URL = import.meta.env.VITE_BOOKING_API_URL || "https://full-stack-park-and-go-app.vercel.app/api/bookings";
 
 
 if (!API_URL) console.error("❌ Auth API URL is not defined. Check your .env file.");
