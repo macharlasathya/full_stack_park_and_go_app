@@ -2,13 +2,22 @@
 const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
+const mongoose = require('mongoose');
 
-
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
   try {
-
-    console.log('Received booking request with body:', JSON.stringify(req.body, null, 2));
-
+    console.log('Booking data received:', JSON.stringify(req.body, null, 2));
+    
+    // Check database connection first
+    if (mongoose.connection.readyState !== 1) {
+      console.error("MongoDB not connected when trying to save booking");
+      return res.status(500).json({
+        success: false,
+        error: "Database connection issue",
+        details: "MongoDB connection is not ready"
+      });
+    }
+    
     const {
       fullName,
       mobileNumber,
@@ -22,35 +31,88 @@ router.post('/', async (req, res, next) => {
       totalAmount,
       orderNumber,
       status,
-      reference,
-      timestamp
+      reference
     } = req.body;
-
-
-    console.log('Extracted booking data:', {
+    
+    // Validate required fields
+    const requiredFields = {
       fullName,
       mobileNumber,
       vehicleNumber,
       entryTime,
       exitTime,
-      orderNumber,
-      status
-    });
-
-
-    let calculatedTotal = totalAmount;
-    if (isNaN(calculatedTotal)) {
-      calculatedTotal = pricePerHour * duration;
-      console.log(`Calculated total amount: ${calculatedTotal} (${pricePerHour} * ${duration})`);
+      pricePerHour,
+      duration,
+      orderNumber
+    };
+    
+    const missingFields = Object.entries(requiredFields)
+      .filter(([_, value]) => !value)
+      .map(([key]) => key);
+    
+    if (missingFields.length > 0) {
+      console.warn("Missing required fields:", missingFields);
+      return res.status(400).json({
+        success: false,
+        error: "Required fields are missing",
+        missingFields
+      });
     }
-
-
-    const newRecord = new Booking({
+    
+    // Parse numeric values
+    const numPricePerHour = parseFloat(pricePerHour);
+    const numDuration = parseFloat(duration);
+    let numTotalAmount = parseFloat(totalAmount);
+    
+    if (isNaN(numPricePerHour) || isNaN(numDuration)) {
+      console.warn("Invalid numeric values:", { pricePerHour, duration });
+      return res.status(400).json({
+        success: false,
+        error: "Invalid numeric values for pricePerHour or duration"
+      });
+    }
+    
+    // Calculate total if not provided or invalid
+    if (isNaN(numTotalAmount)) {
+      numTotalAmount = numPricePerHour * numDuration;
+      console.log(`Calculated total amount: ${numTotalAmount}`);
+    }
+    
+    // Parse dates
+    let parsedEntryTime, parsedExitTime;
+    try {
+      parsedEntryTime = new Date(entryTime);
+      if (isNaN(parsedEntryTime.getTime())) {
+        throw new Error('Invalid entry time format');
+      }
+    } catch (e) {
+      console.warn("Invalid entry time:", entryTime);
+      return res.status(400).json({
+        success: false,
+        error: "Invalid entry time format"
+      });
+    }
+    
+    try {
+      parsedExitTime = new Date(exitTime);
+      if (isNaN(parsedExitTime.getTime())) {
+        throw new Error('Invalid exit time format');
+      }
+    } catch (e) {
+      console.warn("Invalid exit time:", exitTime);
+      return res.status(400).json({
+        success: false,
+        error: "Invalid exit time format"
+      });
+    }
+    
+    // Create booking document
+    const newBooking = new Booking({
       fullName,
       mobileNumber,
       vehicleNumber,
-      entryTime: new Date(entryTime),
-      exitTime: new Date(exitTime),
+      entryTime: parsedEntryTime,
+      exitTime: parsedExitTime,
       parkingLocation: {
         coordinates: parkingLocation?.coordinates || [],
         name: parkingLocation?.name || '',
@@ -60,53 +122,74 @@ router.post('/', async (req, res, next) => {
         method: paymentInformation?.method || 'UPI',
         reference: paymentInformation?.reference || reference || ''
       },
-      pricePerHour,
-      duration,
-      totalAmount: calculatedTotal,
+      pricePerHour: numPricePerHour,
+      duration: numDuration,
+      totalAmount: numTotalAmount,
       orderNumber,
-      status,
+      status: status || 'Pending',
       paymentVerified: status === 'Completed',
       reference,
-      timestamp: timestamp ? new Date(timestamp) : new Date()
+      timestamp: new Date()
     });
-
-    console.log('About to save record:', JSON.stringify(newRecord, null, 2));
-
-    const savedRecord = await newRecord.save();
-
-    console.log('Record saved successfully with ID:', savedRecord._id);
-
+    
+    console.log("Booking document created:", JSON.stringify(newBooking, null, 2));
+    
+    // Check for validation errors
+    const validationError = newBooking.validateSync();
+    if (validationError) {
+      console.error("Validation error:", validationError);
+      return res.status(400).json({
+        success: false,
+        error: "Validation failed",
+        details: validationError.message
+      });
+    }
+    
+    // Save booking
+    console.log("Attempting to save booking...");
+    const savedBooking = await newBooking.save();
+    console.log("Booking saved successfully with ID:", savedBooking._id);
+    
+    // Return success response
     res.status(201).json({
       success: true,
-      data: savedRecord
+      data: savedBooking
     });
   } catch (error) {
-    console.error('Error saving booking:', error);
-
-
+    console.error("Error saving booking:", error);
+    
+    // Check for duplicate key error
+    if (error.code === 11000) {
+      return res.status(400).json({
+        success: false,
+        error: "Duplicate order number",
+        message: "A booking with this order number already exists"
+      });
+    }
+    
+    // Return detailed error response
     res.status(500).json({
       success: false,
-      error: error.message,
-      details: error.stack,
-      validationErrors: error.errors ? Object.keys(error.errors).map(key => ({
-        field: key,
-        message: error.errors[key].message
-      })) : []
+      error: "Server error",
+      message: error.message,
+      stack: process.env.NODE_ENV === 'production' ? undefined : error.stack
     });
   }
 });
 
-
-router.get('/', async (req, res, next) => {
+// Get all bookings
+router.get('/', async (req, res) => {
   try {
     const bookings = await Booking.find().sort({ timestamp: -1 });
+    console.log(`Found ${bookings.length} bookings`);
+    
     res.status(200).json({
       success: true,
       count: bookings.length,
       data: bookings
     });
   } catch (error) {
-    console.error('Error fetching bookings:', error);
+    console.error("Error fetching bookings:", error);
     res.status(500).json({
       success: false,
       error: error.message
@@ -114,24 +197,24 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-
-router.get('/:id', async (req, res, next) => {
+// Get single booking
+router.get('/:id', async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.id);
-
+    
     if (!booking) {
       return res.status(404).json({
         success: false,
         error: 'Booking not found'
       });
     }
-
+    
     res.status(200).json({
       success: true,
       data: booking
     });
   } catch (error) {
-    console.error('Error fetching booking:', error);
+    console.error("Error fetching booking:", error);
     res.status(500).json({
       success: false,
       error: error.message

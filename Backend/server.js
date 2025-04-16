@@ -3,15 +3,17 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const bookingRoutes = require('./routes/BookingRoutes');
+const requestRoutes = require('./routes/requestRoutes');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
-
 
 app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect('mongodb://localhost:27017/parking_db', {
+mongoose.connect(process.env.MONGO_URI, { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -21,6 +23,7 @@ mongoose.connect('mongodb://localhost:27017/parking_db', {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/request',requestRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -32,3 +35,8 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
+
+
